@@ -9,6 +9,11 @@
     "sessions/ai_provenance_xapi_profile.json",
     "sessions/ai_provenance_detection_problem.json",
     "sessions/sql_data_RFI.json",
-    "sessions/incident_response_scheme.json"
+    "sessions/incident_response_scheme.json",
+    "sessions/Genai_course_design.json",
+    "sessions/SULMW_comet_all_threads_workspace.json",
+    "sessions/co-pilot_ai_course_designv1.json",
+    "sessions/emika_ai_future_learning_ecosystem_poc.json",
+    "sessions/learning_intelligence_repository.json"
   ]
 }
