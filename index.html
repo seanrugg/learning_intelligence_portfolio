@@ -390,6 +390,87 @@ footer{
   .blooms-grid{grid-template-columns:1fr 1fr}
   .sessions-nav{gap:6px}
 }
+
+/* ══════════════════════════════════════════
+   CPI PANEL
+══════════════════════════════════════════ */
+.cpi-panel{
+  background:var(--surface);border:1px solid var(--border);border-radius:6px;
+  padding:22px;position:relative;animation:fadeUp 0.5s ease both;
+  border-top:2px solid var(--accent2);margin-top:20px;
+}
+.cpi-inner{
+  display:grid;grid-template-columns:260px 1fr 1fr;gap:28px;align-items:center;
+}
+.cpi-gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cpi-score-display{display:flex;flex-direction:column;align-items:center}
+.cpi-number{
+  font-family:'Bebas Neue',sans-serif;font-size:80px;letter-spacing:2px;line-height:1;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.cpi-band-label{
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--accent2);margin-top:2px;
+}
+.cpi-range-label{font-size:10px;color:var(--muted);font-family:'DM Mono',monospace}
+.cpi-scale{
+  width:100%;height:6px;border-radius:3px;margin-top:4px;
+  background:linear-gradient(90deg,
+    #243347 0%,rgba(78,106,138,0.6) 20%,
+    rgba(0,229,255,0.4) 45%,rgba(123,97,255,0.7) 70%,var(--accent2) 100%);
+  position:relative;
+}
+.cpi-scale-marker{
+  position:absolute;top:-3px;width:12px;height:12px;
+  background:var(--accent2);border-radius:50%;border:2px solid var(--bg);
+  transform:translateX(-50%);transition:left 1s cubic-bezier(0.16,1,0.3,1);
+  box-shadow:0 0 8px var(--accent2);
+}
+.cpi-scale-ticks{
+  display:flex;justify-content:space-between;margin-top:4px;
+  font-family:'DM Mono',monospace;font-size:9px;color:var(--dim);
+}
+.cpi-breakdown{display:flex;flex-direction:column;gap:8px}
+.cpi-component{display:flex;align-items:center;gap:10px}
+.cpi-comp-label{
+  font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;
+  width:140px;flex-shrink:0;letter-spacing:0.5px;
+}
+.cpi-comp-bar-bg{flex:1;height:4px;background:var(--dim);border-radius:2px;overflow:hidden}
+.cpi-comp-bar-fill{height:100%;border-radius:2px;transition:width 1.5s cubic-bezier(0.16,1,0.3,1)}
+.cpi-comp-val{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent2);width:36px;text-align:right;flex-shrink:0}
+.cpi-narrative{display:flex;flex-direction:column;gap:10px}
+.cpi-band-card{
+  background:var(--surface2);border:1px solid var(--border);border-radius:4px;
+  padding:14px;border-left:3px solid var(--accent2);
+}
+.cpi-band-title{
+  font-size:10px;font-weight:600;color:var(--text);margin-bottom:4px;
+  font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;
+}
+.cpi-band-desc{font-size:11px;color:var(--muted);line-height:1.6}
+.cpi-disclaimer{
+  font-size:9px;color:var(--dim);line-height:1.5;padding:8px 10px;
+  border:1px solid var(--border);border-radius:4px;
+  font-family:'DM Mono',monospace;letter-spacing:0.3px;
+}
+.cpi-agg-range{display:flex;align-items:baseline;gap:6px}
+.cpi-agg-lo{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--muted)}
+.cpi-agg-sep{font-family:'DM Mono',monospace;font-size:14px;color:var(--dim)}
+.cpi-agg-hi{
+  font-family:'Bebas Neue',sans-serif;font-size:68px;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+@media(max-width:1100px){
+  .cpi-inner{grid-template-columns:1fr 1fr}
+  .cpi-gauge-wrap{grid-column:1/3;flex-direction:row;justify-content:center;gap:28px}
+}
+@media(max-width:700px){
+  .cpi-inner{grid-template-columns:1fr}
+  .cpi-gauge-wrap{grid-column:1;flex-direction:column}
+}
 </style>
 </head>
 <body>
@@ -404,7 +485,7 @@ footer{
     <div class="hero-identity">
       <div class="hero-eyebrow">AI Work Portfolio</div>
       <div class="hero-name" id="heroName">Sean Rugge</div>
-      <div class="hero-title" id="heroTitle">eLearning Strategist</div>
+      <div class="hero-title" id="heroTitle">Enterprise eLearninig Strategist</div>
       <p class="hero-tagline" id="heroTagline">
         This portfolio surfaces <strong>applied competency evidence</strong> from real AI-assisted work sessions — 
         structured problem-solving, analytical depth, and strategic thinking demonstrated in practice, not on paper.
@@ -418,6 +499,10 @@ footer{
       <div class="hero-stat">
         <div class="hero-stat-val" id="heroCompCount">—</div>
         <div class="hero-stat-label">Competency Domains</div>
+      </div>
+      <div class="hero-stat" id="heroCpiStat" style="display:none">
+        <div class="hero-stat-val">—</div>
+        <div class="hero-stat-label">Peak CPI</div>
       </div>
       <div class="hero-badges" id="heroBadges"></div>
     </div>
@@ -438,7 +523,7 @@ footer{
   </main>
 
   <footer>
-    <div class="footer-note">LEARNING INTELLIGENCE PORTFOLIO &nbsp;·&nbsp; SCHEMA v1.0 &nbsp;·&nbsp; <span id="footerSessionCount"></span></div>
+    <div class="footer-note">LEARNING INTELLIGENCE PORTFOLIO &nbsp;·&nbsp; SCHEMA v1.1 &nbsp;·&nbsp; CPI ENABLED &nbsp;·&nbsp; <span id="footerSessionCount"></span></div>
     <div class="footer-right">
       <a href="https://github.com" id="footerGithubLink" target="_blank">VIEW SOURCE →</a>
       <span class="footer-note" id="footerGenerated"></span>
@@ -556,6 +641,19 @@ function onSessionsLoaded() {
   document.getElementById('heroBadges').innerHTML = sources.map((src, i) =>
     `<span class="badge ${badgeColors[i % 4]}">${src}</span>`
   ).join('');
+
+  // Peak CPI hero stat
+  const cpis = sessions.map(s => computeCPI(s)).filter(Boolean).map(c => c.cpi_score);
+  const peakCpi = cpis.length ? Math.max(...cpis) : null;
+  if (peakCpi) {
+    const band = getBand(peakCpi);
+    const cpiStatEl = document.getElementById('heroCpiStat');
+    if (cpiStatEl) {
+      cpiStatEl.querySelector('.hero-stat-val').textContent = peakCpi;
+      cpiStatEl.querySelector('.hero-stat-label').textContent = 'Peak CPI · ' + band.label;
+      cpiStatEl.style.display = 'block';
+    }
+  }
 
   // Update footer
   document.getElementById('footerSessionCount').textContent =
@@ -924,6 +1022,9 @@ function renderContent(data, headerHTML) {
         ${portfolioHTML}
       </div>
     </div>
+
+    <!-- CPI PANEL -->
+    ${buildCPIPanel(data, data._isAggregate || false)}
   `;
 
   // Trigger bar animations
@@ -932,6 +1033,12 @@ function renderContent(data, headerHTML) {
       const w = el.style.width;
       el.style.width = '0';
       requestAnimationFrame(() => requestAnimationFrame(() => { el.style.width = w; }));
+    });
+    // Animate CPI component bars
+    document.querySelectorAll('.cpi-comp-bar-fill').forEach(el => {
+      const target = el.getAttribute('data-target') || '0';
+      el.style.width = '0';
+      requestAnimationFrame(() => requestAnimationFrame(() => { el.style.width = target + '%'; }));
     });
   }, 50);
 
@@ -1009,6 +1116,151 @@ function showEmptyState(msg) {
       <div class="empty-icon">◈</div>
       <div class="empty-title">No Sessions Loaded</div>
       <div class="empty-desc">${esc(msg || 'Add session JSON files to the sessions/ folder and update manifest.json')}</div>
+    </div>`;
+}
+
+// ── CPI ───────────────────────────────────────────────────
+const CPI_BANDS = [
+  { min:130, max:145, label:'Exceptional',  color:'var(--accent2)',
+    desc:'Dominant Create/Evaluate-level cognitive work sustained throughout. Advanced metacognitive awareness with explicit self-direction. Deep strategic and systems-level framing. Immediate application readiness with original artifacts produced.' },
+  { min:115, max:129, label:'Advanced',     color:'var(--accent)',
+    desc:'Consistent upper Bloom\'s engagement. Strong self-direction and metacognitive monitoring. Predominantly strategic framing with clear cross-domain synthesis. High application readiness.' },
+  { min:100, max:114, label:'Proficient',   color:'var(--accent3)',
+    desc:'Solid Apply/Analyze-level engagement across the session. Good application orientation with real-world grounding. Moderate strategic awareness. Competency demonstrated with clear evidence.' },
+  { min:85,  max:99,  label:'Developing',   color:'#f0a040',
+    desc:'Apply/Analyze range with some higher-order moments. Moderate engagement and metacognitive signals. Strategic thinking present but not dominant. Growing professional application orientation.' },
+  { min:70,  max:84,  label:'Foundational', color:'var(--muted)',
+    desc:'Primarily Remember/Understand cognitive work. Surface engagement patterns. Limited metacognitive signals or strategic framing. Session represents introductory or orientation-level learning.' },
+];
+
+function computeCPI(data) {
+  // Use embedded CPI if schema v1.1+
+  if (data.cognitive_performance_index?.cpi_score) return data.cognitive_performance_index;
+  // Fallback: compute from v1.0 scores
+  const sc = data.scores;
+  if (!sc) return null;
+  const raw = (sc.cognitive_depth_score  * 0.35)
+            + (sc.meta_cognition_score    * 0.25)
+            + (sc.strategic_thinking_pct  * 0.20)
+            + (sc.engagement_score        * 0.15)
+            + ((sc.roi_awareness_pct||50) * 0.05);
+  const clamped = Math.min(145, Math.max(70, Math.round(70 + (raw / 100) * 75)));
+  const band = CPI_BANDS.find(b => clamped >= b.min) || CPI_BANDS[CPI_BANDS.length - 1];
+  return {
+    cpi_score: clamped, cpi_band: band.label,
+    cpi_band_description: band.desc,
+    component_scores: {
+      cognitive_depth: sc.cognitive_depth_score, meta_cognition: sc.meta_cognition_score,
+      strategic_thinking: sc.strategic_thinking_pct, engagement: sc.engagement_score,
+      roi_awareness: sc.roi_awareness_pct || 50,
+    },
+    component_weights: { cognitive_depth:0.35, meta_cognition:0.25, strategic_thinking:0.20, engagement:0.15, roi_awareness:0.05 },
+    calculation_note: 'Computed by dashboard from Schema v1.0 session scores. Session-specific behavioral composite. Not a measure of general intelligence or a psychometric IQ equivalent.',
+    _computed: true,
+  };
+}
+
+function getBand(score) {
+  return CPI_BANDS.find(b => score >= b.min) || CPI_BANDS[CPI_BANDS.length - 1];
+}
+
+function buildCPIComponentBars(cpi) {
+  if (!cpi?.component_scores) return '';
+  const components = [
+    { key:'cognitive_depth',    label:'Cognitive Depth',    weight:'35%', color:'var(--accent2)' },
+    { key:'meta_cognition',     label:'Meta-Cognition',     weight:'25%', color:'var(--accent)'  },
+    { key:'strategic_thinking', label:'Strategic Thinking', weight:'20%', color:'var(--accent3)' },
+    { key:'engagement',         label:'Engagement',         weight:'15%', color:'var(--warn)'    },
+    { key:'roi_awareness',      label:'ROI Awareness',      weight:'5%',  color:'#a0b8cc'        },
+  ];
+  return components.map(c => {
+    const score = cpi.component_scores[c.key] ?? 0;
+    return `<div class="cpi-component">
+      <div class="cpi-comp-label">${c.label} <span style="color:var(--dim)">(${c.weight})</span></div>
+      <div class="cpi-comp-bar-bg">
+        <div class="cpi-comp-bar-fill" style="width:0%;background:${c.color}" data-target="${score}"></div>
+      </div>
+      <div class="cpi-comp-val">${score}</div>
+    </div>`;
+  }).join('');
+}
+
+function buildCPIPanel(data, isAggregate) {
+  if (isAggregate) {
+    const cpis = sessions.map(s => computeCPI(s)).filter(Boolean).map(c => c.cpi_score);
+    if (!cpis.length) return '';
+    const lo = Math.min(...cpis), hi = Math.max(...cpis);
+    const hiSession = sessions.find(s => (computeCPI(s)||{}).cpi_score === hi);
+    const hiCpi = hiSession ? computeCPI(hiSession) : null;
+    const band = getBand(hi);
+    return `
+    <div class="cpi-panel" style="animation-delay:0.35s">
+      <div class="panel-title">Cognitive Performance Index — Session Range</div>
+      <div class="cpi-inner">
+        <div class="cpi-gauge-wrap">
+          <div class="cpi-score-display">
+            <div class="cpi-agg-range">
+              <span class="cpi-agg-lo">${lo}</span>
+              <span class="cpi-agg-sep">–</span>
+              <span class="cpi-agg-hi">${hi}</span>
+            </div>
+            <div class="cpi-band-label">${band.label} Peak</div>
+            <div class="cpi-range-label">Range across ${sessions.length} sessions · Scale 70–145</div>
+          </div>
+          <div style="width:100%">
+            <div class="cpi-scale"><div class="cpi-scale-marker" style="left:${((hi-70)/75*100).toFixed(1)}%"></div></div>
+            <div class="cpi-scale-ticks"><span>70</span><span>89</span><span>100</span><span>115</span><span>130</span><span>145</span></div>
+          </div>
+        </div>
+        <div class="cpi-breakdown">
+          <div style="font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">Peak session components</div>
+          ${hiCpi ? buildCPIComponentBars(hiCpi) : ''}
+        </div>
+        <div class="cpi-narrative">
+          <div class="cpi-band-card" style="border-left-color:${band.color}">
+            <div class="cpi-band-title" style="color:${band.color}">Peak Band — ${band.label} (${band.min}–${band.max})</div>
+            <div class="cpi-band-desc">${band.desc}</div>
+          </div>
+          <div class="cpi-disclaimer">⚠ Session-specific behavioral composite · Not a psychometric instrument · Does not measure general intelligence · Reflects observed cognitive engagement within documented sessions only · LI Dashboard Prompt v1.2 methodology</div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  const cpi = computeCPI(data);
+  if (!cpi) return '';
+  const band = getBand(cpi.cpi_score);
+  const markerPct = ((cpi.cpi_score - 70) / 75 * 100).toFixed(1);
+  const computedNote = cpi._computed
+    ? '<span style="color:var(--dim);font-size:9px;font-family:\'DM Mono\',monospace"> · computed from v1.0 scores</span>'
+    : '';
+  return `
+    <div class="cpi-panel" style="animation-delay:0.35s">
+      <div class="panel-title">Cognitive Performance Index${computedNote}</div>
+      <div class="cpi-inner">
+        <div class="cpi-gauge-wrap">
+          <div class="cpi-score-display">
+            <div class="cpi-number">${cpi.cpi_score}</div>
+            <div class="cpi-band-label">${cpi.cpi_band}</div>
+            <div class="cpi-range-label">${band.min}–${band.max} band · Scale 70–145</div>
+          </div>
+          <div style="width:100%">
+            <div class="cpi-scale"><div class="cpi-scale-marker" style="left:${markerPct}%"></div></div>
+            <div class="cpi-scale-ticks"><span>70</span><span>89</span><span>100</span><span>115</span><span>130</span><span>145</span></div>
+          </div>
+        </div>
+        <div class="cpi-breakdown">
+          <div style="font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">Component scores</div>
+          ${buildCPIComponentBars(cpi)}
+        </div>
+        <div class="cpi-narrative">
+          <div class="cpi-band-card" style="border-left-color:${band.color}">
+            <div class="cpi-band-title" style="color:${band.color}">${cpi.cpi_band} — ${band.min}–${band.max}</div>
+            <div class="cpi-band-desc">${esc(cpi.cpi_band_description)}</div>
+          </div>
+          <div class="cpi-disclaimer">⚠ Session-specific behavioral composite · Not a psychometric instrument · Does not measure general intelligence · Reflects observed cognitive engagement within this session only · LI Dashboard Prompt v1.2 rubrics</div>
+        </div>
+      </div>
     </div>`;
 }
 
