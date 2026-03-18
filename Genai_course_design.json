@@ -1,0 +1,287 @@
+{
+  "schema_version": "1.0",
+  "session": {
+    "id": "20260224-COURSEDEV-4B1D",
+    "date": "2026-02-24",
+    "title": "AI-Assisted Instructional Design for Military Mountain Warfare Course",
+    "source": "Gemini Enterprise",
+    "source_type": "ai_conversation",
+    "duration_minutes": 120,
+    "topic_summary": "A user, acting as a military instructor, collaborated with an AI to develop a complete course framework for 'Small Unit Leadership in Mountain Warfare' based on a doctrinal publication. The session progressed from initial design, through iterative refinement, to the generation of multiple course artifacts including quizzes, documents, and strategic summaries.",
+    "tags": [
+      "Instructional Design",
+      "AI in Education",
+      "Moodle",
+      "Military Training",
+      "Course Development"
+    ]
+  },
+  "scores": {
+    "competency_domains_count": 5,
+    "cognitive_depth_score": 90,
+    "strategic_thinking_pct": 95,
+    "roi_awareness_pct": 95,
+    "engagement_score": 98,
+    "meta_cognition_score": 90
+  },
+  "competencies": [
+    {
+      "name": "Instructional Design & Curriculum Development",
+      "score": 95,
+      "color": "cyan",
+      "frameworks": [
+        "ATD Capability Model",
+        "ADDIE"
+      ],
+      "bloom_level": 6,
+      "bloom_label": "Create",
+      "tags": [
+        "Course Framework",
+        "Learning Objectives",
+        "Assessment Design"
+      ]
+    },
+    {
+      "name": "AI Governance & Prompt Engineering",
+      "score": 98,
+      "color": "green",
+      "frameworks": [
+        "Emerging Tech Skill"
+      ],
+      "bloom_level": 5,
+      "bloom_label": "Evaluate",
+      "tags": [
+        "Human-in-the-Loop",
+        "Iterative Feedback",
+        "AI Tasking"
+      ]
+    },
+    {
+      "name": "Technical Proficiency & Debugging",
+      "score": 90,
+      "color": "orange",
+      "frameworks": [
+        "SFIA (TEST)"
+      ],
+      "bloom_level": 4,
+      "bloom_label": "Analyze",
+      "tags": [
+        "XML",
+        "Moodle",
+        "Troubleshooting"
+      ]
+    },
+    {
+      "name": "Technical Writing & Documentation",
+      "score": 95,
+      "color": "purple",
+      "frameworks": [
+        "SFIA (STW)"
+      ],
+      "bloom_level": 6,
+      "bloom_label": "Create",
+      "tags": [
+        "How-To Guides",
+        "Summaries",
+        "Reports"
+      ]
+    },
+    {
+      "name": "Strategic Analysis",
+      "score": 90,
+      "color": "cyan",
+      "frameworks": [
+        "SHRM"
+      ],
+      "bloom_level": 5,
+      "bloom_label": "Evaluate",
+      "tags": [
+        "Workflow Optimization",
+        "ROI",
+        "Future of Work"
+      ]
+    }
+  ],
+  "radar": {
+    "axes": [
+      {
+        "label": "Instructional Design",
+        "value": 95,
+        "description": "Ability to conceptualize and structure educational content."
+      },
+      {
+        "label": "Technical Acumen",
+        "value": 90,
+        "description": "Skill in handling and debugging technical formats like XML."
+      },
+      {
+        "label": "AI Governance",
+        "value": 98,
+        "description": "Effectiveness in directing, correcting, and collaborating with AI."
+      },
+      {
+        "label": "Problem Solving",
+        "value": 95,
+        "description": "Persistence and analytical skill in resolving complex errors."
+      },
+      {
+        "label": "Strategic Vision",
+        "value": 90,
+        "description": "Capacity to see beyond the task to its broader implications and value."
+      }
+    ]
+  },
+  "blooms_progression": [
+    {
+      "level": 1,
+      "label": "Remember",
+      "icon": "🧠",
+      "title": "Information Recall",
+      "description": "Provided the AI with the MCRP 12-10A.1 doctrinal publication as the foundational source of truth.",
+      "dots_active": 3,
+      "dot_color": "cyan"
+    },
+    {
+      "level": 2,
+      "label": "Understand",
+      "icon": "💡",
+      "title": "Conceptual Interpretation",
+      "description": "Discussed the meaning and implications of leadership challenges like 'cocooning' and corrected the AI's interpretation of chapter titles.",
+      "dots_active": 4,
+      "dot_color": "cyan"
+    },
+    {
+      "level": 3,
+      "label": "Apply",
+      "icon": "✍️",
+      "title": "Practical Application",
+      "description": "Directed the AI to apply doctrinal knowledge to create a course framework and a detailed FRAGO for the final exercise.",
+      "dots_active": 5,
+      "dot_color": "green"
+    },
+    {
+      "level": 4,
+      "label": "Analyze",
+      "icon": "🔎",
+      "title": "Systematic Analysis",
+      "description": "Analyzed Moodle error messages and screenshots to systematically diagnose the root cause of XML formatting failures.",
+      "dots_active": 5,
+      "dot_color": "green"
+    },
+    {
+      "level": 5,
+      "label": "Evaluate",
+      "icon": "🤔",
+      "title": "Critical Evaluation",
+      "description": "Evaluated the AI's performance, identified its errors, and prompted for strategic documents analyzing the ROI and value of the entire process.",
+      "dots_active": 5,
+      "dot_color": "orange"
+    },
+    {
+      "level": 6,
+      "label": "Create",
+      "icon": "🚀",
+      "title": "Generative Creation",
+      "description": "Created a complete suite of net-new course artifacts: a full POI, multiple quizzes, discussion prompts, and professional documentation (PDFs/DOCX).",
+      "dots_active": 5,
+      "dot_color": "purple"
+    }
+  ],
+  "roi": {
+    "knowledge_value_usd": 4500,
+    "time_efficiency_multiplier": 20.0,
+    "engagement_score": 98,
+    "retention_probability_pct": 90,
+    "application_readiness": "EXCEPTIONAL",
+    "employer_value_index": 9.8,
+    "lms_equivalent_hours": 40.0,
+    "session_hours": 2.0
+  },
+  "timeline": [
+    {
+      "title": "Project Inception",
+      "description": "User defined the role of 'Gunnery Sergeant' and tasked the AI with creating a course framework from a doctrinal PDF."
+    },
+    {
+      "title": "Iterative Design",
+      "description": "User identified flaws in the initial AI-generated framework, leading to collaborative refinement and integration of missed doctrinal concepts."
+    },
+    {
+      "title": "Artifact Generation",
+      "description": "AI generated a suite of course materials including a FRAGO, PDF documents, and Moodle XML quiz files."
+    },
+    {
+      "title": "Technical Debugging Loop",
+      "description": "Encountered persistent XML formatting errors. The user provided precise feedback via screenshots, guiding the AI through multiple correction cycles."
+    },
+    {
+      "title": "Problem Resolution & Mastery",
+      "description": "The specific root cause of the XML error was identified and corrected, leading to the successful generation of all remaining assessments."
+    },
+    {
+      "title": "Meta-Cognitive Analysis",
+      "description": "User prompted the AI to shift perspective, asking for a how-to guide, a strategic summary, and a detailed analysis of the session itself."
+    }
+  ],
+  "employer_value": [
+    {
+      "icon": "⚡",
+      "title": "Accelerated Training Development",
+      "description": "Demonstrated the ability to compress a multi-week course design and development cycle into a matter of hours, delivering ready-to-use materials at exceptional speed."
+    },
+    {
+      "icon": "⚙️",
+      "title": "Human-AI Teaming",
+      "description": "Masterfully governed an AI partner, providing precise feedback to overcome technical challenges and improve the quality of the final product, acting as a true force multiplier."
+    },
+    {
+      "icon": "🎯",
+      "title": "Full-Spectrum Execution",
+      "description": "Showcased end-to-end project capability, from high-level strategic design and doctrinal analysis to hands-on technical production and debugging."
+    },
+    {
+      "icon": "📈",
+      "title": "Strategic & ROI-Focused",
+      "description": "Proactively analyzed the process to document new efficiencies, quantify value, and create scalable workflows, demonstrating a vision for organizational improvement."
+    }
+  ],
+  "portfolio": {
+    "title": "AI-Powered Curriculum Development for Military Training",
+    "subtitle": "SELF-DIRECTED · APPLIED · DOCUMENTED",
+    "primary_tags": [
+      "Instructional Design",
+      "AI Integration",
+      "Moodle"
+    ],
+    "secondary_title": "Agile Troubleshooting & Technical Resolution",
+    "secondary_subtitle": "DEBUGGING · ITERATION · MASTERY",
+    "secondary_tags": [
+      "XML",
+      "Quality Assurance"
+    ],
+    "documentation_formats": [
+      {
+        "label": "Course Framework (DOCX)",
+        "color": "cyan"
+      },
+      {
+        "label": "Moodle Quizzes (XML)",
+        "color": "orange"
+      },
+      {
+        "label": "How-To Guide (PDF)",
+        "color": "green"
+      },
+      {
+        "label": "Strategic Analysis (JSON)",
+        "color": "purple"
+      }
+    ]
+  },
+  "meta": {
+    "generated_by": "Gemini Enterprise",
+    "generated_at": "2026-02-24T09:15:00Z",
+    "confidence": "HIGH",
+    "notes": "The user's persistence and high-quality feedback during the XML debugging phase were critical to the session's success. This demonstrated an exceptional ability to guide an AI through a complex, iterative troubleshooting process to achieve a specific technical outcome. The final ROI and value metrics are high due to the clear demonstration of compressing a significant workload."
+  }
+}

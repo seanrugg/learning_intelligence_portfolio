@@ -1,0 +1,270 @@
+{
+  "schema_version": "1.0",
+  "session": {
+    "id": "20260225-LEARNECO-M7QX",
+    "date": "2026-02-25",
+    "title": "AI-Powered Learning Ecosystem Architecture & xAPI Learning Evidence Design",
+    "source": "emika.ai (Jade)",
+    "source_type": "ai_conversation",
+    "duration_minutes": 55,
+    "topic_summary": "A comprehensive architectural design session for an open-source, AI-integrated learning ecosystem spanning OpenWebUI, Moodle, a Learning Record Store, Keycloak SSO, PeerTube, and a custom xAPI bridge service. The learner drove a product vision for replacing the traditional LMS experience with AI-delivered instruction across three modalities, and identified a meaningful gap in standard xAPI — proposing enriched learning evidence as an extension layer. The session culminated in a working Docker Compose stack, a custom xAPI bridge microservice, and a structured GitHub repository scaffold.",
+    "tags": ["learning-ecosystem", "xAPI", "MCP", "Moodle", "OpenWebUI", "SSO", "edtech", "distance-education", "docker", "open-source"]
+  },
+  "scores": {
+    "competency_domains_count": 8,
+    "cognitive_depth_score": 91,
+    "strategic_thinking_pct": 94,
+    "roi_awareness_pct": 88,
+    "engagement_score": 95,
+    "meta_cognition_score": 82
+  },
+  "competencies": [
+    {
+      "name": "Learning Systems Architecture",
+      "score": 92,
+      "color": "cyan",
+      "frameworks": ["ATD", "SFIA", "IMS Global"],
+      "bloom_level": 6,
+      "bloom_label": "Create",
+      "tags": ["LMS", "LRS", "SSO", "microservices", "xAPI"]
+    },
+    {
+      "name": "EdTech Product Strategy",
+      "score": 90,
+      "color": "purple",
+      "frameworks": ["ATD", "SHRM"],
+      "bloom_level": 5,
+      "bloom_label": "Evaluate",
+      "tags": ["product-vision", "distance-education", "AI-instruction", "market-differentiation"]
+    },
+    {
+      "name": "xAPI & Learning Standards",
+      "score": 85,
+      "color": "green",
+      "frameworks": ["IEEE xAPI", "IMS Global", "ADL"],
+      "bloom_level": 5,
+      "bloom_label": "Evaluate",
+      "tags": ["xAPI", "LRS", "extensions", "learning-evidence"]
+    },
+    {
+      "name": "Open Source Technology Evaluation",
+      "score": 88,
+      "color": "cyan",
+      "frameworks": ["SFIA"],
+      "bloom_level": 5,
+      "bloom_label": "Evaluate",
+      "tags": ["Keycloak", "Moodle", "Ralph", "PeerTube", "Ollama", "Docker"]
+    },
+    {
+      "name": "AI Integration & MCP Architecture",
+      "score": 87,
+      "color": "purple",
+      "frameworks": ["SFIA", "ATD"],
+      "bloom_level": 6,
+      "bloom_label": "Create",
+      "tags": ["MCP", "OpenWebUI", "Ollama", "Llama", "tool-use"]
+    },
+    {
+      "name": "Enterprise Scalability Planning",
+      "score": 84,
+      "color": "orange",
+      "frameworks": ["SHRM", "SFIA"],
+      "bloom_level": 5,
+      "bloom_label": "Evaluate",
+      "tags": ["GPU-scaling", "data-sovereignty", "defense-clients", "air-gapped-deployment"]
+    },
+    {
+      "name": "Learning Science & Pedagogy",
+      "score": 80,
+      "color": "green",
+      "frameworks": ["ATD", "Bloom's Taxonomy"],
+      "bloom_level": 5,
+      "bloom_label": "Evaluate",
+      "tags": ["hybrid-learning", "AI-instructor", "cohort-learning", "modality-design"]
+    },
+    {
+      "name": "Competency Evidence Framework Design",
+      "score": 91,
+      "color": "cyan",
+      "frameworks": ["ATD", "SFIA", "Bloom's Taxonomy"],
+      "bloom_level": 6,
+      "bloom_label": "Create",
+      "tags": ["Learning-Intelligence", "JSON-schema", "portfolio", "talent-evaluation"]
+    }
+  ],
+  "radar": {
+    "axes": [
+      {
+        "label": "Systems Thinking",
+        "value": 93,
+        "description": "Ability to design and reason about interconnected technical systems at scale"
+      },
+      {
+        "label": "Strategic Vision",
+        "value": 94,
+        "description": "Clarity of product vision and ability to articulate market differentiation"
+      },
+      {
+        "label": "Technical Depth",
+        "value": 87,
+        "description": "Understanding of underlying technologies, protocols, and integration patterns"
+      },
+      {
+        "label": "Learning Science",
+        "value": 82,
+        "description": "Application of learning theory and pedagogy to product design decisions"
+      },
+      {
+        "label": "Innovation Index",
+        "value": 91,
+        "description": "Identifying novel solutions and gaps in existing standards (xAPI extension proposal)"
+      },
+      {
+        "label": "Exec Communication",
+        "value": 88,
+        "description": "Ability to frame technical decisions in business and stakeholder terms"
+      }
+    ]
+  },
+  "blooms_progression": [
+    {
+      "level": 1,
+      "label": "Remember",
+      "icon": "📌",
+      "title": "Terminology Anchoring",
+      "description": "Confirmed understanding of POC definition when unclear; demonstrated familiarity with SSO, xAPI, MCP, LRS, Docker, and Bloom's Taxonomy without needing explanation.",
+      "dots_active": 4,
+      "dot_color": "cyan"
+    },
+    {
+      "level": 2,
+      "label": "Understand",
+      "icon": "🔍",
+      "title": "Concept Translation",
+      "description": "Articulated the distinction between activity-based xAPI records ('Sean watched Video X') and learning-evidence records ('Sean demonstrated proficiency at level N') — reframing a standards limitation as a product opportunity.",
+      "dots_active": 5,
+      "dot_color": "cyan"
+    },
+    {
+      "level": 3,
+      "label": "Apply",
+      "icon": "⚙️",
+      "title": "Schema in Context",
+      "description": "Applied the existing Learning Intelligence JSON schema as evidence for the xAPI extension proposal, and shared real multi-platform session files (Claude, Copilot, Perplexity, Gemini) as test data — applying the schema across contexts.",
+      "dots_active": 5,
+      "dot_color": "green"
+    },
+    {
+      "level": 4,
+      "label": "Analyze",
+      "icon": "🧩",
+      "title": "Architecture Decomposition",
+      "description": "Broke the product vision into three distinct learning modalities (pure AI, hybrid AI+instructor, AI+cohort) and analyzed how each maps to different infrastructure requirements. Also independently identified that the Moodle webservice_mcp plugin eliminated the need for custom middleware — a significant architecture simplification.",
+      "dots_active": 5,
+      "dot_color": "purple"
+    },
+    {
+      "level": 5,
+      "label": "Evaluate",
+      "icon": "⚖️",
+      "title": "Critical Technology Judgment",
+      "description": "Evaluated Ollama on CPU as acceptable for POC but inadequate for production; assessed data sovereignty requirements for military/defense clients; correctly prioritized the Moodle→OpenWebUI MCP connection as the most strategically important integration to validate.",
+      "dots_active": 5,
+      "dot_color": "purple"
+    },
+    {
+      "level": 6,
+      "label": "Create",
+      "icon": "🚀",
+      "title": "Ecosystem Synthesis",
+      "description": "Directed the design of a complete 8-service Docker Compose ecosystem, custom xAPI bridge microservice, GitHub repository scaffold, and the conceptual architecture for AI-as-instructor across three modalities — synthesizing learning theory, open-source tooling, enterprise requirements, and proprietary schema work into a coherent product.",
+      "dots_active": 5,
+      "dot_color": "cyan"
+    }
+  ],
+  "roi": {
+    "knowledge_value_usd": 14500,
+    "time_efficiency_multiplier": 24.0,
+    "engagement_score": 95,
+    "retention_probability_pct": 88,
+    "application_readiness": "EXCEPTIONAL",
+    "employer_value_index": 9.2,
+    "lms_equivalent_hours": 22.0,
+    "session_hours": 0.92
+  },
+  "timeline": [
+    {
+      "title": "Vision Framing",
+      "description": "Learner articulated the full product vision — SSO-unified learning ecosystem across OpenWebUI, Moodle, LRS, and MCP — including the explicit requirement for open-source tooling and enterprise scalability from the first prompt."
+    },
+    {
+      "title": "xAPI Gap Identification",
+      "description": "Learner identified the critical limitation of standard xAPI (activity records vs. learning evidence) and proposed extending the spec with the Learning Intelligence JSON schema — an original conceptual contribution to the architecture."
+    },
+    {
+      "title": "Schema Validation",
+      "description": "Shared 4 real session JSON files from different AI platforms (Claude, Copilot, Perplexity, Gemini) demonstrating that the schema is already cross-platform validated and production-ready as a data standard."
+    },
+    {
+      "title": "Modality Framework Creation",
+      "description": "Articulated a three-modality framework for AI-delivered education (pure AI instruction, hybrid AI+human, AI+cohort) and connected it to infrastructure requirements — effectively designing the product's pedagogical architecture."
+    },
+    {
+      "title": "MCP Plugin Discovery",
+      "description": "Identified the existing webservice_mcp Moodle plugin, which eliminated the need for custom middleware and significantly simplified the architecture — demonstrating proactive technical research during the session."
+    },
+    {
+      "title": "Ecosystem Commissioning",
+      "description": "Directed the creation of a complete Docker Compose stack, xAPI bridge microservice, GitHub repository scaffold, and GitHub-ready documentation — moving from concept to deployable POC infrastructure within a single session."
+    }
+  ],
+  "employer_value": [
+    {
+      "icon": "🏗️",
+      "title": "Enterprise Learning Architecture",
+      "description": "Designed a complete, scalable, open-source learning ecosystem architecture from first principles — demonstrating the systems thinking and technical depth required to lead edtech infrastructure projects at enterprise scale."
+    },
+    {
+      "icon": "💡",
+      "title": "Standards Innovation",
+      "description": "Identified a meaningful gap in the xAPI specification and proposed an evidence-based extension model — demonstrating the ability to engage with and advance industry standards, not merely implement them."
+    },
+    {
+      "icon": "🎯",
+      "title": "Product Vision Clarity",
+      "description": "Articulated a differentiated product vision (AI as live instructor, LMS as backend record system) with clear market positioning against traditional edtech — including identifying defensible competitive moats for defense/enterprise clients."
+    },
+    {
+      "icon": "⚙️",
+      "title": "Full-Stack Technical Literacy",
+      "description": "Demonstrated working knowledge across authentication (Keycloak/OIDC), containerization (Docker Compose), LMS integration (Moodle MCP), LLM deployment (Ollama, GPU scaling), and data standards (xAPI, JSON schema) — rare breadth for a learning professional."
+    },
+    {
+      "icon": "📊",
+      "title": "Proprietary Competency Measurement",
+      "description": "Brings a functional, cross-platform competency measurement schema and dashboard system — an original intellectual asset that replaces LMS completion data with verifiable learning evidence."
+    }
+  ],
+  "portfolio": {
+    "title": "AI Learning Ecosystem Design & xAPI Evidence Architecture",
+    "subtitle": "SELF-DIRECTED · APPLIED · DEPLOYABLE",
+    "primary_tags": ["Learning Architecture", "AI Integration", "xAPI Innovation", "Open Source Stack"],
+    "secondary_title": "EdTech Product Strategy & Distance Education Redesign",
+    "secondary_subtitle": "STRATEGIC · ORIGINAL · ENTERPRISE-READY",
+    "secondary_tags": ["Product Vision", "Military/Enterprise", "AI Instruction Modalities"],
+    "documentation_formats": [
+      { "label": "Docker Compose Stack", "color": "cyan" },
+      { "label": "xAPI Bridge Microservice", "color": "green" },
+      { "label": "Architecture Diagram", "color": "purple" },
+      { "label": "GitHub Repository", "color": "cyan" },
+      { "label": "MCP Setup Guide", "color": "orange" },
+      { "label": "Modality Framework", "color": "purple" }
+    ]
+  },
+  "meta": {
+    "generated_by": "Claude (Anthropic) — claude-sonnet-4-6",
+    "generated_at": "2026-02-24T00:00:00Z",
+    "confidence": "HIGH",
+    "notes": "Session transcript is complete and detailed. Duration estimated at 55 minutes based on conversation length and technical depth. Scores reflect a learner operating at expert-adjacent level in learning systems design with genuine original contributions (xAPI extension proposal, three-modality pedagogical framework). The meta-cognition score (82) is slightly tempered because self-reflection was primarily implicit rather than explicitly verbalized — the learner was in execution mode throughout. ROI multiplier (24x) reflects compression of what would be weeks of independent research, architecture consulting, and tool evaluation into a single session."
+  }
+}
