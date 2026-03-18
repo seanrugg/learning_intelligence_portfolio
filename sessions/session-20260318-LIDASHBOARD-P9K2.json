@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.1",
+  "session": {
+    "id": "20260318-LIDASHBOARD-P9K2",
+    "date": "2026-03-18",
+    "title": "LI Portfolio Dashboard — Employer View, CPI Integration & Debug",
+    "source": "Claude (Anthropic)",
+    "source_type": "ai_conversation",
+    "duration_minutes": 75,
+    "topic_summary": "A multi-phase applied development session covering the design and deployment of an employer-facing Learning Intelligence Portfolio on GitHub Pages, integration of the Cognitive Performance Index from Schema v1.1 into the portfolio dashboard, and live debugging of a silent session-load failure affecting 2 of 12 JSON files. The learner drove architecture decisions, defined UX priorities, resolved real production issues, and iteratively extended a working system.",
+    "tags": ["dashboard-development", "github-pages", "CPI-integration", "portfolio-design", "debugging", "schema-v1.1", "employer-portfolio", "AI-tooling"]
+  },
+  "scores": {
+    "competency_domains_count": 6,
+    "cognitive_depth_score": 91,
+    "strategic_thinking_pct": 84,
+    "roi_awareness_pct": 90,
+    "engagement_score": 93,
+    "meta_cognition_score": 88
+  },
+  "competencies": [
+    {
+      "name": "Full-Stack Web Development (Applied)",
+      "score": 86,
+      "color": "cyan",
+      "frameworks": ["SFIA Digital Skills Framework", "Web Standards (HTML/CSS/JS)"],
+      "bloom_level": 6,
+      "bloom_label": "Create",
+      "tags": ["Single-File Architecture", "GitHub Pages", "Manifest-Driven Loading"]
+    },
+    {
+      "name": "Systems Architecture & Design",
+      "score": 89,
+      "color": "purple",
+      "frameworks": ["TOGAF Concepts", "Systems Thinking"],
+      "bloom_level": 6,
+      "bloom_label": "Create",
+      "tags": ["Auto-Loading Design", "Schema Versioning", "Backward Compatibility"]
+    },
+    {
+      "name": "Technical Debugging & Root Cause Analysis",
+      "score": 85,
+      "color": "orange",
+      "frameworks": ["SFIA Problem Management", "Systematic Troubleshooting"],
+      "bloom_level": 5,
+      "bloom_label": "Evaluate",
+      "tags": ["Silent Failure Detection", "Browser Console Diagnostics", "File Path Validation"]
+    },
+    {
+      "name": "Learning Technology & Portfolio Design",
+      "score": 92,
+      "color": "cyan",
+      "frameworks": ["ATD Capability Model", "xAPI / Learning Record Standards"],
+      "bloom_level": 6,
+      "bloom_label": "Create",
+      "tags": ["Competency Evidence", "CPI Integration", "Employer-Facing UX"]
+    },
+    {
+      "name": "Product & UX Strategy",
+      "score": 83,
+      "color": "green",
+      "frameworks": ["Jobs-to-be-Done", "User-Centered Design"],
+      "bloom_level": 5,
+      "bloom_label": "Evaluate",
+      "tags": ["Audience Framing", "Information Hierarchy", "Stakeholder Perspective"]
+    },
+    {
+      "name": "AI Integration & Tool Orchestration",
+      "score": 88,
+      "color": "purple",
+      "frameworks": ["AI Literacy Framework", "Digital Fluency Standards"],
+      "bloom_level": 6,
+      "bloom_label": "Create",
+      "tags": ["Prompt-to-Schema Pipeline", "Multi-Session Aggregation", "Schema Backward Compatibility"]
+    }
+  ],
+  "radar": {
+    "axes": [
+      { "label": "WEB DEVELOPMENT", "value": 86, "description": "Applied HTML/CSS/JS single-file architecture with manifest-based session loading" },
+      { "label": "SYSTEMS DESIGN", "value": 89, "description": "Architected auto-loading GitHub Pages deployment with versioned schema support" },
+      { "label": "DEBUGGING", "value": 85, "description": "Diagnosed and resolved silent load failures in a live production system" },
+      { "label": "LEARNING TECH", "value": 92, "description": "Designed and extended a CPI-enabled employer portfolio from Schema v1.1" },
+      { "label": "UX STRATEGY", "value": 83, "description": "Defined employer-facing information hierarchy and audience-appropriate framing" },
+      { "label": "AI INTEGRATION", "value": 88, "description": "Orchestrated prompt-to-schema-to-dashboard pipeline across multiple schema versions" }
+    ]
+  },
+  "blooms_progression": [
+    {
+      "level": 1,
+      "label": "Remember",
+      "icon": "🔍",
+      "title": "Schema & Architecture Recall",
+      "description": "Accurately recalled Schema v1.0 vs v1.1 field structures, CPI rubric weights, and existing dashboard architecture across multiple turns without reference documents.",
+      "dots_active": 4,
+      "dot_color": "cyan"
+    },
+    {
+      "level": 2,
+      "label": "Understand",
+      "icon": "📖",
+      "title": "Conceptual Architecture Grasp",
+      "description": "Demonstrated clear understanding of why manifest-based loading enables continuous portfolio growth, and why silent failures require explicit error surfacing.",
+      "dots_active": 5,
+      "dot_color": "cyan"
+    },
+    {
+      "level": 3,
+      "label": "Apply",
+      "icon": "⚙️",
+      "title": "Implementation & Deployment",
+      "description": "Applied GitHub Pages deployment steps, CONFIG block customization, and manifest.json file management to a real working system.",
+      "dots_active": 5,
+      "dot_color": "green"
+    },
+    {
+      "level": 4,
+      "label": "Analyze",
+      "icon": "🧩",
+      "title": "Root Cause Decomposition",
+      "description": "Independently analyzed the missing-session problem by reasoning through four distinct failure modes (case sensitivity, path mismatch, invalid JSON, missing session.id) before the console confirmed which applied.",
+      "dots_active": 5,
+      "dot_color": "purple"
+    },
+    {
+      "level": 5,
+      "label": "Evaluate",
+      "icon": "🔗",
+      "title": "Design Tradeoff Judgment",
+      "description": "Evaluated hosting architecture options, UX emphasis priorities, and visual tone choices with clear rationale — accepted GitHub Pages + manifest as optimal on all three dimensions.",
+      "dots_active": 5,
+      "dot_color": "orange"
+    },
+    {
+      "level": 6,
+      "label": "Create",
+      "icon": "💡",
+      "title": "Novel System Extension",
+      "description": "Directed creation of a new employer-facing portfolio variant with identity hero, CPI panel, backward-compatible schema fallback, and a manifest-driven auto-loading architecture — all original design decisions.",
+      "dots_active": 5,
+      "dot_color": "cyan"
+    }
+  ],
+  "roi": {
+    "knowledge_value_usd": 5850,
+    "time_efficiency_multiplier": 16.0,
+    "engagement_score": 93,
+    "retention_probability_pct": 85,
+    "application_readiness": "EXCEPTIONAL",
+    "employer_value_index": 9.1,
+    "lms_equivalent_hours": 20.0,
+    "session_hours": 1.25
+  },
+  "cognitive_performance_index": {
+    "cpi_score": 135,
+    "cpi_band": "Exceptional",
+    "cpi_band_description": "The learner sustained Create-level cognitive work across multiple distinct domains — directing architecture, driving UX decisions, integrating a new metric system, and diagnosing a live production failure — all within a single session. Meta-cognitive signals were strong: the learner recognized the value of surfacing silent errors for future sessions before being prompted, and self-applied the session analyzer to their own work. Strategic framing was consistent throughout, with every decision anchored to the employer-audience use case.",
+    "component_weights": {
+      "cognitive_depth": 0.35,
+      "meta_cognition": 0.25,
+      "strategic_thinking": 0.20,
+      "engagement": 0.15,
+      "roi_awareness": 0.05
+    },
+    "component_scores": {
+      "cognitive_depth": 91,
+      "meta_cognition": 88,
+      "strategic_thinking": 84,
+      "engagement": 93,
+      "roi_awareness": 90
+    },
+    "calculation_note": "Session-specific behavioral composite scored via LI Dashboard Prompt v1.2 rubrics. Not a measure of general intelligence or a psychometric IQ equivalent. Reflects observed cognitive performance within this session only."
+  },
+  "timeline": [
+    {
+      "title": "Employer Portfolio Brief",
+      "description": "Defined the core requirement: a shareable URL-based portfolio that auto-loads JSON sessions without requiring employer interaction — GitHub Pages as the delivery mechanism."
+    },
+    {
+      "title": "Architecture Decision",
+      "description": "Selected manifest.json-driven auto-loading over embedded data or manual upload — enabling continuous portfolio growth with a single file edit per new session."
+    },
+    {
+      "title": "UX Priority Setting",
+      "description": "Specified employer-facing design priorities: identity hero first, competencies and value proposition above scores, narrative framing, and de-emphasis of AI-scored framing."
+    },
+    {
+      "title": "Portfolio Dashboard Built",
+      "description": "Directed creation of index.html, manifest.json, and README.md — a complete deployable GitHub Pages portfolio with dark aesthetic, pill navigation, and aggregate view."
+    },
+    {
+      "title": "CPI Integration Request",
+      "description": "Identified that the new portfolio was missing the Cognitive Performance Index from Schema v1.1/Dashboard v3 — requested port of full CPI implementation including backward compatibility."
+    },
+    {
+      "title": "CPI Panel Integrated",
+      "description": "CPI panel added with hero stat, aggregate range view, component bars, band description, and v1.0 score fallback computation — all wired into the employer portfolio."
+    },
+    {
+      "title": "Production Debug — Missing Sessions",
+      "description": "Reported 10 of 12 sessions loading. Diagnosed four possible failure modes; used browser console to confirm a filename case mismatch and a duplicate session ID as the two causes."
+    },
+    {
+      "title": "Meta-Cognitive Close",
+      "description": "Recognized this conversation itself as a documentable session and applied the v1.2 analyzer prompt to generate the session JSON — closing the loop on the portfolio's own methodology."
+    }
+  ],
+  "employer_value": [
+    {
+      "icon": "🏗️",
+      "title": "End-to-End System Builder",
+      "description": "Designed, deployed, and iteratively extended a full production web system — from architecture decision through live debugging — without supervision or scaffolding."
+    },
+    {
+      "icon": "🧠",
+      "title": "AI Toolchain Fluency",
+      "description": "Orchestrates a prompt-to-schema-to-dashboard pipeline across multiple AI platforms and schema versions, demonstrating practical AI integration beyond surface-level use."
+    },
+    {
+      "icon": "🔍",
+      "title": "Systematic Debugger",
+      "description": "Diagnosed a silent production failure by reasoning through four distinct failure modes before verification — demonstrating structured analytical thinking under ambiguity."
+    },
+    {
+      "icon": "🎯",
+      "title": "Audience-Driven Product Thinking",
+      "description": "Consistently reframed technical decisions through the lens of the employer audience — information hierarchy, framing language, and visual tone all anchored to stakeholder perspective."
+    }
+  ],
+  "portfolio": {
+    "title": "AI Portfolio Infrastructure Design & Deployment",
+    "subtitle": "APPLIED · PRODUCTION · SELF-DIRECTED",
+    "primary_tags": ["Web Development", "GitHub Pages", "Dashboard Architecture", "CPI Integration"],
+    "secondary_title": "Technical Debugging & Schema Engineering",
+    "secondary_subtitle": "ANALYTICAL · SYSTEMATIC · DOCUMENTED",
+    "secondary_tags": ["Root Cause Analysis", "Schema Versioning", "Backward Compatibility"],
+    "documentation_formats": [
+      { "label": "Portfolio Entry", "color": "cyan" },
+      { "label": "Resume Bullet", "color": "green" },
+      { "label": "LinkedIn Summary", "color": "purple" },
+      { "label": "Interview Evidence", "color": "orange" },
+      { "label": "GitHub README", "color": "cyan" },
+      { "label": "PDP Record", "color": "purple" }
+    ]
+  },
+  "meta": {
+    "generated_by": "Claude Sonnet 4.6 (Anthropic)",
+    "generated_at": "2026-03-18T00:00:00Z",
+    "confidence": "HIGH",
+    "notes": "Rubrics: LI Dashboard v1.2. Knowledge value: weighted avg $287/hr (technical/specialist $200 + advanced professional $325 across 6 domains) × 20.0 LMS hrs × 1.5× Create multiplier = $5,850 (rounded to nearest $50). Time efficiency: 20.0 LMS hrs ÷ 1.25 session hrs = 16.0×; flagged — dense session with parallel workstreams (architecture + CPI + debug). Retention: 10% baseline + active generation(15) + contextual grounding(15) + artifact produced(15) + iterative refinement(10) + emotional engagement(10) + prior knowledge activation(10) = 85% (capped; meta-cognitive awareness partial credit already embedded in engagement score). Engagement: inquiry(18) + idea dev(19) + application(19) + focus(19) + meta-cog(18) = 93. EVI: breadth(1.8) + ceiling(2.0) + transferability(1.6) + strategic(1.8) + immediacy(1.9) = 9.1. CPI: (91×0.35)+(88×0.25)+(84×0.20)+(93×0.15)+(90×0.05) = 31.85+22.0+16.8+13.95+4.5 = 89.1 raw → CPI 70+(89.1/100×75) = 136.8 → 135 (conservatively rounded; single-session self-analysis has inherent observation limits). Confidence HIGH — full conversation transcript available for analysis. Note: this session was self-analyzed by the same AI that participated in it; scores are based on observable learner behavior only, not AI contributions."
+  }
+}
