@@ -1,0 +1,14 @@
+{
+  "_comment": "Learning Intelligence Portfolio — Session Manifest",
+  "_instructions": "Add a new entry to the 'sessions' array each time you add a JSON file to this folder. Paths are relative to the repo root.",
+  "_last_updated": "2026-03-18",
+  "sessions": [
+    "sessions/session-20260223-AILEARNING-7K2X.json",
+    "sessions/moodle_ai_agent_project.json",
+    "sessions/comet_sulmw_course_designv1.json",
+    "sessions/ai_provenance_xapi_profile.json",
+    "sessions/ai_provenance_detection_problem.json",
+    "sessions/sql_data_RFI.json",
+    "sessions/incident_response_scheme.json"
+  ]
+}
