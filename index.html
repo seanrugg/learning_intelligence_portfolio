@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Work Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060a0f;
+  --surface: #0c1420;
+  --surface2: #111b2c;
+  --surface3: #162238;
+  --border: #1a2d46;
+  --border2: #243d5a;
+  --accent: #00e5ff;
+  --accent2: #7b61ff;
+  --accent3: #00ff9d;
+  --warn: #ff6b35;
+  --text: #e2eaf5;
+  --muted: #4e6a8a;
+  --dim: #243347;
+  --hero-glow: rgba(0,229,255,0.04);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'DM Sans',sans-serif; min-height:100vh; overflow-x:hidden;
+}
+
+/* ── GRID TEXTURE ── */
+body::before{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:48px 48px; opacity:0.18;
+}
+
+/* ── AMBIENT GLOWS ── */
+.glow-1{position:fixed;top:-300px;left:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,0.07) 0%,transparent 65%);pointer-events:none;z-index:0;animation:driftA 25s ease-in-out infinite alternate}
+.glow-2{position:fixed;bottom:-200px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(123,97,255,0.07) 0%,transparent 65%);pointer-events:none;z-index:0;animation:driftB 30s ease-in-out infinite alternate}
+@keyframes driftA{from{transform:translate(0,0)}to{transform:translate(200px,150px)}}
+@keyframes driftB{from{transform:translate(0,0)}to{transform:translate(-150px,-100px)}}
+
+.wrap{position:relative;z-index:1;max-width:1380px;margin:0 auto;padding:0 28px 60px}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+.hero{
+  padding:64px 0 48px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:40px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:end;
+}
+.hero-identity{}
+.hero-eyebrow{
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:3px;
+  text-transform:uppercase; color:var(--accent); margin-bottom:16px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent);opacity:0.5}
+.hero-name{
+  font-family:'Bebas Neue',sans-serif; font-size:80px; line-height:0.9;
+  letter-spacing:4px;
+  background:linear-gradient(135deg,var(--text) 0%,rgba(226,234,245,0.6) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:10px;
+}
+.hero-title{
+  font-size:16px; font-weight:300; color:var(--muted); letter-spacing:1px;
+  margin-bottom:20px; font-style:italic;
+}
+.hero-tagline{
+  font-size:13px; color:var(--text); line-height:1.7; max-width:620px;
+  font-weight:300;
+}
+.hero-tagline strong{color:var(--accent); font-weight:500}
+
+.hero-meta{
+  display:flex; flex-direction:column; align-items:flex-end; gap:12px;
+  padding-bottom:4px;
+}
+.hero-stat{text-align:right}
+.hero-stat-val{
+  font-family:'Bebas Neue',sans-serif; font-size:52px; letter-spacing:2px; line-height:1;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-stat-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:'DM Mono',monospace;margin-top:2px}
+
+.hero-badges{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;margin-top:8px}
+.badge{
+  font-family:'DM Mono',monospace; font-size:8px; letter-spacing:1.5px; text-transform:uppercase;
+  padding:4px 10px; border-radius:2px;
+}
+.badge-cyan{background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.25);color:var(--accent)}
+.badge-purple{background:rgba(123,97,255,0.1);border:1px solid rgba(123,97,255,0.25);color:var(--accent2)}
+.badge-green{background:rgba(0,255,157,0.1);border:1px solid rgba(0,255,157,0.25);color:var(--accent3)}
+.badge-orange{background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.25);color:var(--warn)}
+
+/* ══════════════════════════════════════════
+   LOADING STATE
+══════════════════════════════════════════ */
+#loadingState{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:80px 0; gap:16px;
+}
+.loading-ring{
+  width:40px; height:40px; border-radius:50%;
+  border:2px solid var(--border);
+  border-top-color:var(--accent);
+  animation:spin 0.8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+
+/* ══════════════════════════════════════════
+   NAV PILLS (session switcher)
+══════════════════════════════════════════ */
+.sessions-nav{
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  margin-bottom:28px; padding-bottom:20px; border-bottom:1px solid var(--border);
+}
+.sessions-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.pill{
+  padding:6px 14px; border-radius:20px; cursor:pointer;
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px;
+  border:1px solid var(--border); color:var(--muted); background:var(--surface);
+  transition:all 0.2s; white-space:nowrap;
+  display:flex; align-items:center; gap:6px;
+}
+.pill:hover{border-color:var(--accent);color:var(--text)}
+.pill.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,0.07)}
+.pill.agg{border-color:var(--accent2)}
+.pill.agg.active{border-color:var(--accent3);color:var(--accent3);background:rgba(0,255,157,0.05)}
+.pill-dot{width:5px;height:5px;border-radius:50%;background:var(--dim)}
+.pill.active .pill-dot{background:var(--accent);animation:pulse 2s infinite}
+.pill.agg.active .pill-dot{background:var(--accent3)}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+.pill-src{font-size:8px;color:var(--muted);opacity:0.7;text-transform:uppercase}
+
+/* ══════════════════════════════════════════
+   AGGREGATE BANNER
+══════════════════════════════════════════ */
+.agg-banner{
+  background:linear-gradient(135deg,rgba(0,255,157,0.05),rgba(0,229,255,0.04));
+  border:1px solid rgba(0,255,157,0.15); border-radius:6px;
+  padding:14px 20px; margin-bottom:24px;
+  display:flex; align-items:center; gap:14px;
+  font-family:'DM Mono',monospace; font-size:11px; color:var(--accent3);
+}
+.agg-icon{font-size:18px}
+.agg-desc{color:var(--muted);font-size:10px;margin-top:2px}
+
+/* ══════════════════════════════════════════
+   EMPLOYER VALUE — TOP SECTION
+══════════════════════════════════════════ */
+.employer-section{margin-bottom:28px}
+.section-title{
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:3px;
+  text-transform:uppercase; color:var(--muted); margin-bottom:16px;
+  display:flex; align-items:center; gap:12px;
+}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.value-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:6px;
+  padding:18px; transition:border-color 0.2s, transform 0.2s;
+  animation:fadeUp 0.5s ease both;
+}
+.value-card:hover{border-color:var(--accent2);transform:translateY(-2px)}
+.value-card-icon{font-size:22px;margin-bottom:10px}
+.value-card-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px}
+.value-card-desc{font-size:10px;color:var(--muted);line-height:1.6}
+
+/* ══════════════════════════════════════════
+   MAIN DASHBOARD GRID
+══════════════════════════════════════════ */
+.dash-grid{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-bottom:20px}
+.dash-left{display:flex;flex-direction:column;gap:20px}
+
+/* ══════════════════════════════════════════
+   COMPETENCY SECTION
+══════════════════════════════════════════ */
+.panel{
+  background:var(--surface); border:1px solid var(--border); border-radius:6px;
+  padding:22px; animation:fadeUp 0.5s ease both;
+}
+.panel-title{
+  font-size:9px; letter-spacing:2.5px; text-transform:uppercase; color:var(--muted);
+  font-family:'DM Mono',monospace; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.panel-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* Competency grid: radar + bars side by side */
+.comp-grid{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.radar-wrap{display:flex;justify-content:center;align-items:center}
+
+.comp-list{display:flex;flex-direction:column;gap:14px}
+.comp-item{}
+.comp-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.comp-name{font-size:12px;font-weight:500;color:var(--text)}
+.comp-meta{display:flex;align-items:center;gap:8px}
+.comp-score{font-family:'DM Mono',monospace;font-size:12px;color:var(--accent)}
+.bloom-badge{
+  font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;
+  padding:2px 6px;border-radius:2px;
+  background:rgba(123,97,255,0.1);border:1px solid rgba(123,97,255,0.2);color:var(--accent2);
+}
+.comp-bar-bg{height:3px;background:var(--dim);border-radius:2px;overflow:hidden;margin-bottom:4px}
+.comp-bar-fill{height:100%;border-radius:2px;transition:width 1.4s cubic-bezier(0.16,1,0.3,1)}
+.comp-bar-fill.cyan{background:linear-gradient(90deg,var(--accent2),var(--accent))}
+.comp-bar-fill.green{background:linear-gradient(90deg,var(--accent),var(--accent3))}
+.comp-bar-fill.orange{background:linear-gradient(90deg,var(--warn),#ffb347)}
+.comp-bar-fill.purple{background:linear-gradient(90deg,var(--accent2),#b388ff)}
+.comp-tags{display:flex;gap:4px;flex-wrap:wrap}
+.comp-tag{
+  font-size:8px;padding:2px 6px;border-radius:2px;
+  font-family:'DM Mono',monospace;letter-spacing:0.5px;
+  background:var(--surface2);border:1px solid var(--border);color:var(--muted);
+}
+.frameworks-note{font-size:9px;color:var(--dim);margin-top:2px;font-family:'DM Mono',monospace}
+
+/* ══════════════════════════════════════════
+   SCORE SUMMARY CARDS
+══════════════════════════════════════════ */
+.score-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.score-card{
+  background:var(--surface2);border:1px solid var(--border);border-radius:6px;
+  padding:14px;position:relative;overflow:hidden;
+}
+.score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.score-card.cyan::before{background:var(--accent)}.score-card.purple::before{background:var(--accent2)}
+.score-card.green::before{background:var(--accent3)}.score-card.orange::before{background:var(--warn)}
+.score-label{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:8px}
+.score-val{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:1px;line-height:1}
+.score-card.cyan .score-val{color:var(--accent)}.score-card.purple .score-val{color:var(--accent2)}
+.score-card.green .score-val{color:var(--accent3)}.score-card.orange .score-val{color:var(--warn)}
+.score-desc{font-size:9px;color:var(--muted);margin-top:3px;line-height:1.4}
+
+/* ══════════════════════════════════════════
+   RIGHT COLUMN — ROI PANEL
+══════════════════════════════════════════ */
+.roi-panel{display:flex;flex-direction:column;gap:0}
+.roi-metric{padding:14px 0;border-bottom:1px solid var(--border)}
+.roi-metric:last-child{border-bottom:none}
+.roi-label{font-size:8px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:5px}
+.roi-val{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--accent3);letter-spacing:1px;line-height:1}
+.roi-desc{font-size:9px;color:var(--muted);margin-top:2px;line-height:1.4}
+.roi-bar-row{display:flex;gap:3px;align-items:flex-end;height:28px;margin-top:8px}
+.roi-bar-seg{flex:1;border-radius:2px 2px 0 0}
+
+/* ══════════════════════════════════════════
+   BLOOM'S GRID
+══════════════════════════════════════════ */
+.blooms-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.bloom-card{
+  background:var(--surface2);border:1px solid var(--border);border-radius:4px;
+  padding:12px;position:relative;overflow:hidden;
+}
+.bloom-num{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--dim);position:absolute;top:-2px;right:6px;line-height:1}
+.bloom-icon{font-size:15px;margin-bottom:6px}
+.bloom-title{font-size:10px;font-weight:600;color:var(--text);margin-bottom:3px}
+.bloom-desc{font-size:8.5px;color:var(--muted);line-height:1.4}
+.bloom-dots{display:flex;gap:3px;margin-top:8px}
+.bdot{width:5px;height:5px;border-radius:50%;background:var(--dim)}
+.bdot.on{background:var(--accent)}
+.bdot.on.g{background:var(--accent3)}
+.bdot.on.p{background:var(--accent2)}
+.bdot.on.o{background:var(--warn)}
+
+/* ══════════════════════════════════════════
+   BOTTOM ROW — NARRATIVE + TIMELINE
+══════════════════════════════════════════ */
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+
+/* Session narrative cards */
+.narrative-list{display:flex;flex-direction:column;gap:10px}
+.narrative-card{
+  background:var(--surface2);border:1px solid var(--border);border-radius:4px;
+  padding:12px 14px;display:grid;grid-template-columns:28px 1fr;gap:10px;
+  align-items:start;transition:border-color 0.2s;
+}
+.narrative-card:hover{border-color:var(--border2)}
+.narrative-step{
+  font-family:'Bebas Neue',sans-serif;font-size:22px;line-height:1;
+  color:var(--dim);
+}
+.narrative-title{font-size:11px;font-weight:600;color:var(--text);margin-bottom:3px}
+.narrative-desc{font-size:10px;color:var(--muted);line-height:1.5}
+.tl-bloom{font-family:'DM Mono',monospace;font-size:8px;color:var(--accent2);margin-top:4px;letter-spacing:1px;text-transform:uppercase}
+
+/* Timeline */
+.timeline{position:relative;padding-left:20px}
+.timeline::before{content:'';position:absolute;left:5px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent)}
+.tl-item{position:relative;padding-bottom:14px}
+.tl-item::before{content:'';position:absolute;left:-17px;top:5px;width:6px;height:6px;border-radius:50%;background:var(--accent);border:1px solid var(--bg)}
+.tl-title{font-size:11px;font-weight:500;color:var(--text);margin-bottom:2px}
+.tl-desc{font-size:9px;color:var(--muted);line-height:1.5}
+.tl-src{font-size:8px;color:var(--dim);font-family:'DM Mono',monospace;margin-top:3px;letter-spacing:1px;text-transform:uppercase}
+
+/* ══════════════════════════════════════════
+   SESSION INFO STRIP (in individual view)
+══════════════════════════════════════════ */
+.session-strip{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:14px 18px;margin-bottom:20px;
+  background:var(--surface);border:1px solid var(--border);border-radius:6px;
+}
+.session-title{font-size:14px;font-weight:500;color:var(--text)}
+.session-meta{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1px}
+.session-badge{
+  font-family:'DM Mono',monospace;font-size:8px;padding:3px 8px;border-radius:2px;
+  background:var(--surface2);border:1px solid var(--border);color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;
+}
+.session-tags-row{margin-left:auto;display:flex;gap:5px;flex-wrap:wrap}
+
+/* ══════════════════════════════════════════
+   EMPTY / ERROR STATES
+══════════════════════════════════════════ */
+.empty-state{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:80px 40px;text-align:center;
+}
+.empty-icon{font-size:48px;margin-bottom:20px;opacity:0.25}
+.empty-title{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+.empty-desc{font-size:11px;color:var(--dim);max-width:420px;line-height:1.7}
+.empty-code{
+  margin-top:24px;font-family:'DM Mono',monospace;font-size:10px;
+  background:var(--surface);border:1px solid var(--border);border-radius:4px;
+  padding:14px 20px;color:var(--muted);text-align:left;max-width:480px;line-height:1.8;
+}
+.empty-code .k{color:var(--accent)}.empty-code .s{color:var(--accent3)}.empty-code .p{color:var(--warn)}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer{
+  margin-top:40px;padding-top:20px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+}
+.footer-note{font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px}
+.footer-right{display:flex;gap:16px;align-items:center}
+.footer-right a{font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;text-decoration:none;transition:color 0.2s}
+.footer-right a:hover{color:var(--accent)}
+
+/* ══════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════ */
+.toast{
+  position:fixed;bottom:24px;right:24px;z-index:100;
+  background:var(--surface2);border:1px solid var(--accent3);border-radius:4px;
+  padding:10px 18px;font-family:'DM Mono',monospace;font-size:10px;color:var(--accent3);
+  transform:translateY(60px);opacity:0;transition:all 0.3s;pointer-events:none;
+  letter-spacing:1px;
+}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ══════════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:1100px){
+  .hero{grid-template-columns:1fr;gap:24px}
+  .hero-meta{flex-direction:row;align-items:flex-start;flex-wrap:wrap}
+  .hero-badges{justify-content:flex-start}
+  .dash-grid{grid-template-columns:1fr}
+  .value-grid{grid-template-columns:1fr 1fr}
+  .blooms-grid{grid-template-columns:repeat(3,1fr)}
+  .comp-grid{grid-template-columns:1fr}
+  .radar-wrap{display:none}
+}
+@media(max-width:700px){
+  .hero-name{font-size:56px}
+  .score-row{grid-template-columns:1fr 1fr}
+  .bottom-grid{grid-template-columns:1fr}
+  .value-grid{grid-template-columns:1fr}
+  .blooms-grid{grid-template-columns:1fr 1fr}
+  .sessions-nav{gap:6px}
+}
+</style>
+</head>
+<body>
+<div class="glow-1"></div>
+<div class="glow-2"></div>
+<div class="toast" id="toast"></div>
+
+<div class="wrap">
+
+  <!-- ══ HERO ══ -->
+  <header class="hero" id="heroSection">
+    <div class="hero-identity">
+      <div class="hero-eyebrow">AI Work Portfolio</div>
+      <div class="hero-name" id="heroName">Sean Rugge</div>
+      <div class="hero-title" id="heroTitle">Loading profile…</div>
+      <p class="hero-tagline" id="heroTagline">
+        This portfolio surfaces <strong>applied competency evidence</strong> from real AI-assisted work sessions — 
+        structured problem-solving, analytical depth, and strategic thinking demonstrated in practice, not on paper.
+      </p>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <div class="hero-stat-val" id="heroSessionCount">—</div>
+        <div class="hero-stat-label">Documented Sessions</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val" id="heroCompCount">—</div>
+        <div class="hero-stat-label">Competency Domains</div>
+      </div>
+      <div class="hero-badges" id="heroBadges"></div>
+    </div>
+  </header>
+
+  <!-- ══ SESSION NAV ══ -->
+  <nav class="sessions-nav" id="sessionNav" style="display:none">
+    <span class="sessions-label">Sessions</span>
+    <div id="sessionPills" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"></div>
+  </nav>
+
+  <!-- ══ MAIN CONTENT AREA ══ -->
+  <main id="mainContent">
+    <div id="loadingState">
+      <div class="loading-ring"></div>
+      <div class="loading-text">Loading portfolio sessions…</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-note">LEARNING INTELLIGENCE PORTFOLIO &nbsp;·&nbsp; SCHEMA v1.0 &nbsp;·&nbsp; <span id="footerSessionCount"></span></div>
+    <div class="footer-right">
+      <a href="https://github.com" id="footerGithubLink" target="_blank">VIEW SOURCE →</a>
+      <span class="footer-note" id="footerGenerated"></span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════
+// CONFIGURATION — edit this section before deploying
+// ════════════════════════════════════════════════════════════
+const CONFIG = {
+  // Your GitHub Pages base URL (set after you create the repo)
+  // Example: "https://yourusername.github.io/learning-intelligence-dashboard"
+  // Leave as "" to use relative paths (works when index.html is in repo root)
+  baseUrl: "",
+
+  // Path to your sessions manifest file (relative to baseUrl or this page)
+  manifestPath: "sessions/manifest.json",
+
+  // Personal identity shown in the hero section
+  identity: {
+    name: "YOUR NAME",
+    title: "Learning & Development | AI Integration | Organizational Design",
+    tagline: `This portfolio surfaces <strong>applied competency evidence</strong> from real AI-assisted work sessions —
+      structured problem-solving, analytical depth, and strategic thinking demonstrated in practice, not on paper.`
+  },
+
+  // GitHub repo URL for the footer link
+  githubUrl: "https://github.com/yourusername/learning-intelligence-dashboard",
+};
+// ════════════════════════════════════════════════════════════
+
+let sessions = [];
+let activeId = null;
+
+// ── INIT ──────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // Apply identity config
+  document.getElementById('heroName').textContent = CONFIG.identity.name;
+  document.title = CONFIG.identity.name + ' — AI Work Portfolio';
+  document.getElementById('heroTitle').textContent = CONFIG.identity.title;
+  document.getElementById('heroTagline').innerHTML = CONFIG.identity.tagline;
+  document.getElementById('footerGithubLink').href = CONFIG.githubUrl;
+
+  loadManifest();
+});
+
+// ── MANIFEST LOADER ───────────────────────────────────────
+async function loadManifest() {
+  const url = CONFIG.baseUrl
+    ? CONFIG.baseUrl.replace(/\/$/, '') + '/' + CONFIG.manifestPath
+    : CONFIG.manifestPath;
+
+  try {
+    const res = await fetch(url + '?nocache=' + Date.now());
+    if (!res.ok) throw new Error('manifest not found (HTTP ' + res.status + ')');
+    const manifest = await res.json();
+
+    if (!manifest.sessions || !Array.isArray(manifest.sessions)) {
+      throw new Error('manifest.json must have a "sessions" array');
+    }
+
+    // Load all session files in parallel
+    const results = await Promise.allSettled(
+      manifest.sessions.map(path => loadSessionFile(path))
+    );
+
+    const loaded = results.filter(r => r.status === 'fulfilled' && r.value).map(r => r.value);
+    const failed = results.filter(r => r.status === 'rejected');
+
+    if (failed.length) {
+      console.warn(`${failed.length} session(s) failed to load`);
+    }
+
+    if (loaded.length === 0) {
+      showEmptyState('No sessions could be loaded from manifest.');
+      return;
+    }
+
+    loaded.forEach(s => sessions.push(s));
+    onSessionsLoaded();
+  } catch (err) {
+    console.error('Manifest load failed:', err);
+    showManifestError(err.message);
+  }
+}
+
+async function loadSessionFile(path) {
+  const url = CONFIG.baseUrl
+    ? CONFIG.baseUrl.replace(/\/$/, '') + '/' + path
+    : path;
+  const res = await fetch(url + '?nocache=' + Date.now());
+  if (!res.ok) throw new Error('Could not load: ' + path);
+  const data = await res.json();
+  if (!data.session || !data.session.id) throw new Error('Invalid session JSON: ' + path);
+  return data;
+}
+
+// ── AFTER LOADING ─────────────────────────────────────────
+function onSessionsLoaded() {
+  document.getElementById('loadingState').style.display = 'none';
+
+  // Update hero stats
+  document.getElementById('heroSessionCount').textContent = sessions.length;
+
+  // Show session nav
+  const nav = document.getElementById('sessionNav');
+  nav.style.display = 'flex';
+
+  // Collect unique platform badges
+  const sources = [...new Set(sessions.map(s => s.session.source))];
+  const badgeColors = ['badge-cyan', 'badge-purple', 'badge-green', 'badge-orange'];
+  document.getElementById('heroBadges').innerHTML = sources.map((src, i) =>
+    `<span class="badge ${badgeColors[i % 4]}">${src}</span>`
+  ).join('');
+
+  // Update footer
+  document.getElementById('footerSessionCount').textContent =
+    `${sessions.length} SESSION${sessions.length !== 1 ? 'S' : ''} · ${sources.length} SOURCE${sources.length !== 1 ? 'S' : ''}`;
+
+  renderPills();
+
+  // Default: show aggregate if multiple sessions, else single
+  if (sessions.length > 1) {
+    setActive('__aggregate__');
+  } else {
+    setActive(sessions[0].session.id);
+  }
+
+  // Update hero comp count from aggregate
+  const allComps = new Set(sessions.flatMap(s => (s.competencies || []).map(c => c.name)));
+  document.getElementById('heroCompCount').textContent = allComps.size;
+}
+
+// ── PILLS ─────────────────────────────────────────────────
+function renderPills() {
+  const container = document.getElementById('sessionPills');
+  container.innerHTML = '';
+
+  sessions.forEach(s => {
+    const pill = document.createElement('div');
+    pill.className = 'pill' + (activeId === s.session.id ? ' active' : '');
+    pill.innerHTML = `
+      <span class="pill-dot"></span>
+      <span>${truncate(s.session.title, 28)}</span>
+      <span class="pill-src">${s.session.source.split(' ')[0]}</span>
+    `;
+    pill.onclick = () => setActive(s.session.id);
+    container.appendChild(pill);
+  });
+
+  if (sessions.length > 1) {
+    const agg = document.createElement('div');
+    agg.className = 'pill agg' + (activeId === '__aggregate__' ? ' active' : '');
+    agg.innerHTML = `<span class="pill-dot"></span> ALL SESSIONS (${sessions.length})`;
+    agg.onclick = () => setActive('__aggregate__');
+    container.appendChild(agg);
+  }
+}
+
+function setActive(id) {
+  activeId = id;
+  renderPills();
+  if (id === '__aggregate__') {
+    renderAggregate();
+  } else {
+    const s = sessions.find(s => s.session.id === id);
+    if (s) renderSession(s);
+  }
+}
+
+// ── AGGREGATE ─────────────────────────────────────────────
+function buildAggregate() {
+  const allComps = {};
+  sessions.forEach(s => {
+    (s.competencies || []).forEach(c => {
+      if (!allComps[c.name]) allComps[c.name] = { ...c, _scores: [] };
+      allComps[c.name]._scores.push(c.score);
+    });
+  });
+  const mergedComps = Object.values(allComps)
+    .map(c => ({ ...c, score: avg(c._scores) }))
+    .sort((a, b) => b.score - a.score);
+
+  const allAxes = {};
+  sessions.forEach(s => {
+    (s.radar?.axes || []).forEach(a => {
+      if (!allAxes[a.label]) allAxes[a.label] = [];
+      allAxes[a.label].push(a.value);
+    });
+  });
+  const mergedAxes = Object.entries(allAxes).map(([label, vals]) => ({
+    label, value: avg(vals), description: ''
+  }));
+
+  return {
+    _isAggregate: true,
+    _sessionCount: sessions.length,
+    session: {
+      id: '__aggregate__',
+      date: sessions[sessions.length - 1].session.date,
+      title: `Aggregated Portfolio — ${sessions.length} Sessions`,
+      source: [...new Set(sessions.map(s => s.session.source))].join(', '),
+      source_type: 'ai_conversation',
+      duration_minutes: sessions.reduce((a, s) => a + (s.session.duration_minutes || 0), 0),
+      topic_summary: `Aggregated view across ${sessions.length} learning sessions.`,
+      tags: [...new Set(sessions.flatMap(s => s.session.tags || []))]
+    },
+    scores: {
+      competency_domains_count: mergedComps.length,
+      cognitive_depth_score: avg(sessions.map(s => s.scores.cognitive_depth_score)),
+      strategic_thinking_pct: avg(sessions.map(s => s.scores.strategic_thinking_pct)),
+      roi_awareness_pct: avg(sessions.map(s => s.scores.roi_awareness_pct)),
+      engagement_score: avg(sessions.map(s => s.scores.engagement_score)),
+      meta_cognition_score: avg(sessions.map(s => s.scores.meta_cognition_score))
+    },
+    competencies: mergedComps,
+    radar: { axes: mergedAxes },
+    blooms_progression: sessions[sessions.length - 1].blooms_progression,
+    roi: {
+      knowledge_value_usd: sessions.reduce((a, s) => a + (s.roi.knowledge_value_usd || 0), 0),
+      time_efficiency_multiplier: parseFloat((avg(sessions.map(s => s.roi.time_efficiency_multiplier * 10)) / 10).toFixed(1)),
+      engagement_score: avg(sessions.map(s => s.roi.engagement_score)),
+      retention_probability_pct: avg(sessions.map(s => s.roi.retention_probability_pct)),
+      application_readiness: 'HIGH',
+      employer_value_index: parseFloat((sessions.reduce((a, s) => a + (s.roi.employer_value_index || 0), 0) / sessions.length).toFixed(1)),
+      lms_equivalent_hours: sessions.reduce((a, s) => a + (s.roi.lms_equivalent_hours || 0), 0),
+      session_hours: sessions.reduce((a, s) => a + (s.roi.session_hours || 0), 0)
+    },
+    timeline: sessions.flatMap(s =>
+      (s.timeline || []).map(t => ({ ...t, _source: s.session.source.split(' ')[0], _session: s.session.title }))
+    ),
+    employer_value: [...new Map(
+      sessions.flatMap(s => s.employer_value || []).map(v => [v.title, v])
+    ).values()],
+    portfolio: sessions[sessions.length - 1].portfolio,
+    meta: { generated_by: 'Portfolio Aggregator', generated_at: new Date().toISOString(), confidence: 'HIGH', notes: '' }
+  };
+}
+
+function renderAggregate() {
+  const data = buildAggregate();
+  const banner = `
+    <div class="agg-banner">
+      <div class="agg-icon">⊞</div>
+      <div>
+        <div><strong>Aggregated Portfolio — ${sessions.length} Sessions</strong></div>
+        <div class="agg-desc">Competency scores averaged and merged across all sessions · ${[...new Set(sessions.map(s => s.session.source))].join(' · ')}</div>
+      </div>
+    </div>`;
+  renderContent(data, banner);
+}
+
+function renderSession(data) {
+  const tags = (data.session.tags || []).slice(0, 6).map(t =>
+    `<span class="badge badge-cyan">${t}</span>`
+  ).join('');
+  const strip = `
+    <div class="session-strip">
+      <div>
+        <div class="session-title">${esc(data.session.title)}</div>
+        <div class="session-meta">${data.session.date} &nbsp;·&nbsp; ${data.session.source} &nbsp;·&nbsp; ~${data.session.duration_minutes} min</div>
+      </div>
+      <div class="session-tags-row">${tags}</div>
+    </div>`;
+  renderContent(data, strip);
+}
+
+// ── MAIN RENDER ───────────────────────────────────────────
+function renderContent(data, headerHTML) {
+  const sc = data.scores;
+  const roi = data.roi;
+  const comps = data.competencies || [];
+  const axes = data.radar?.axes || [];
+  const blooms = data.blooms_progression || [];
+  const timeline = data.timeline || [];
+  const empVal = data.employer_value || [];
+  const port = data.portfolio || {};
+
+  // Employer value cards
+  const valueCardsHTML = empVal.slice(0, 4).map((v, i) => `
+    <div class="value-card" style="animation-delay:${i * 0.08}s">
+      <div class="value-card-icon">${v.icon}</div>
+      <div class="value-card-title">${esc(v.title)}</div>
+      <div class="value-card-desc">${esc(v.description)}</div>
+    </div>`).join('');
+
+  // Competency list
+  const compListHTML = comps.slice(0, 8).map(c => {
+    const fwStr = (c.frameworks || []).slice(0, 2).join(' · ');
+    const tagsHTML = (c.tags || []).slice(0, 3).map(t => `<span class="comp-tag">${esc(t)}</span>`).join('');
+    return `
+    <div class="comp-item">
+      <div class="comp-header">
+        <span class="comp-name">${esc(c.name)}</span>
+        <div class="comp-meta">
+          <span class="comp-score">${c.score}</span>
+          ${c.bloom_label ? `<span class="bloom-badge">${esc(c.bloom_label)}</span>` : ''}
+        </div>
+      </div>
+      <div class="comp-bar-bg">
+        <div class="comp-bar-fill ${c.color || 'cyan'}" style="width:${c.score}%"></div>
+      </div>
+      ${fwStr ? `<div class="frameworks-note">${esc(fwStr)}</div>` : ''}
+      ${tagsHTML ? `<div class="comp-tags" style="margin-top:4px">${tagsHTML}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  // Score cards
+  const scoreCards = [
+    { label: 'Cognitive Depth', val: sc.cognitive_depth_score, desc: 'Analysis, synthesis & meta-cognition', color: 'purple' },
+    { label: 'Strategic Thinking', val: sc.strategic_thinking_pct + '%', desc: 'Systems-level problem framing', color: 'cyan' },
+    { label: 'Meta-Cognition', val: sc.meta_cognition_score, desc: 'Self-awareness of own learning', color: 'green' },
+  ].map(c => `
+    <div class="score-card ${c.color}">
+      <div class="score-label">${c.label}</div>
+      <div class="score-val">${c.val}</div>
+      <div class="score-desc">${c.desc}</div>
+    </div>`).join('');
+
+  // ROI panel
+  const engBars = buildEngBars(roi.engagement_score);
+  const roiHTML = `
+    <div class="roi-metric">
+      <div class="roi-label">Knowledge Value Estimate</div>
+      <div class="roi-val">$${(roi.knowledge_value_usd || 0).toLocaleString()}</div>
+      <div class="roi-desc">Equivalent formal training market rate</div>
+    </div>
+    <div class="roi-metric">
+      <div class="roi-label">Time Efficiency</div>
+      <div class="roi-val">${roi.time_efficiency_multiplier}×</div>
+      <div class="roi-desc">vs. equivalent structured LMS coursework</div>
+    </div>
+    <div class="roi-metric">
+      <div class="roi-label">Retention Probability</div>
+      <div class="roi-val">${roi.retention_probability_pct}%</div>
+      <div class="roi-desc">vs. 8–10% passive LMS retention</div>
+    </div>
+    <div class="roi-metric">
+      <div class="roi-label">Application Readiness</div>
+      <div class="roi-val" style="font-size:24px;color:var(--accent3)">${esc(roi.application_readiness)}</div>
+      <div class="roi-desc">Immediate applicability to target roles</div>
+    </div>
+    <div class="roi-metric">
+      <div class="roi-label">Employer Value Index</div>
+      <div class="roi-val">${roi.employer_value_index}/10</div>
+      <div class="roi-desc">Competency rarity, depth, AI integration</div>
+    </div>
+    <div class="roi-metric">
+      <div class="roi-label">LMS Equivalent Hours</div>
+      <div class="roi-val">${roi.lms_equivalent_hours}h</div>
+      <div class="roi-bar-row">${engBars}</div>
+    </div>`;
+
+  // Bloom's grid
+  const bloomOrder = ['remember', 'understand', 'apply', 'analyze', 'evaluate', 'create'];
+  const bloomMeta = [
+    { icon: '🔍', label: 'Remember' }, { icon: '📖', label: 'Understand' },
+    { icon: '⚙️', label: 'Apply' }, { icon: '🧩', label: 'Analyze' },
+    { icon: '🔗', label: 'Evaluate' }, { icon: '💡', label: 'Create' }
+  ];
+  const dotColors = ['on', 'on', 'on g', 'on p', 'on o', 'on'];
+  let bloomsHTML;
+
+  if (blooms.length && blooms[0].dots_active !== undefined) {
+    // Schema v1.0 format
+    bloomsHTML = blooms.map((b, i) => {
+      const dotClass = dotColors[i] || 'on';
+      const dotsHTML = [1,2,3,4,5].map(d =>
+        `<div class="bdot ${d <= b.dots_active ? dotClass : ''}"></div>`
+      ).join('');
+      return `
+      <div class="bloom-card">
+        <div class="bloom-num">0${b.level}</div>
+        <div class="bloom-icon">${b.icon || bloomMeta[i]?.icon}</div>
+        <div class="bloom-title">${esc(b.title || b.label)}</div>
+        <div class="bloom-desc">${esc((b.description || '').substring(0, 80))}${(b.description || '').length > 80 ? '…' : ''}</div>
+        <div class="bloom-dots">${dotsHTML}</div>
+      </div>`;
+    }).join('');
+  } else {
+    bloomsHTML = bloomMeta.map((bm, i) => `
+      <div class="bloom-card">
+        <div class="bloom-num">0${i + 1}</div>
+        <div class="bloom-icon">${bm.icon}</div>
+        <div class="bloom-title">${bm.label}</div>
+        <div class="bloom-desc">—</div>
+        <div class="bloom-dots">${[1,2,3,4,5].map(() => `<div class="bdot"></div>`).join('')}</div>
+      </div>`).join('');
+  }
+
+  // Timeline / narrative
+  const tlHTML = timeline.slice(0, 8).map((t, i) => `
+    <div class="narrative-card">
+      <div class="narrative-step">0${i + 1}</div>
+      <div>
+        <div class="narrative-title">${esc(t.title || '')}${t._source ? ` <span class="session-badge">${esc(t._source)}</span>` : ''}</div>
+        <div class="narrative-desc">${esc(t.description || '')}</div>
+        ${t.bloom_level ? `<div class="tl-bloom">${esc(t.bloom_level)}</div>` : ''}
+      </div>
+    </div>`).join('');
+
+  // Portfolio / tags
+  const portTags = (port.primary_tags || []).map((t, i) =>
+    `<span class="badge ${['badge-cyan','badge-purple','badge-green','badge-orange'][i % 4]}">${esc(t)}</span>`
+  ).join('');
+  const portSecTags = (port.secondary_tags || []).map((t, i) =>
+    `<span class="badge ${['badge-cyan','badge-purple','badge-green'][i % 3]}">${esc(t)}</span>`
+  ).join('');
+  const docFormats = (port.documentation_formats || []).map(f =>
+    `<span class="badge badge-${f.color || 'cyan'}">${esc(f.label || f)}</span>`
+  ).join('');
+
+  const portfolioHTML = `
+    <div style="background:linear-gradient(135deg,rgba(0,229,255,0.05),rgba(123,97,255,0.05));border:1px solid var(--border);border-radius:4px;padding:16px;margin-bottom:10px">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">${esc(port.title || 'Portfolio Entry')}</div>
+      <div style="font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;margin-bottom:10px">${esc(port.subtitle || 'SELF-DIRECTED · DOCUMENTED')}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px">${portTags}</div>
+    </div>
+    ${port.secondary_title ? `
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:14px;margin-bottom:10px">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px">${esc(port.secondary_title)}</div>
+      <div style="font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;margin-bottom:10px">${esc(port.secondary_subtitle || '')}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px">${portSecTags}</div>
+    </div>` : ''}
+    <div style="margin-top:10px">
+      <div style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:7px">Documentation Formats</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px">${docFormats}</div>
+    </div>`;
+
+  document.getElementById('mainContent').innerHTML = `
+    ${headerHTML}
+
+    <!-- EMPLOYER VALUE — LEADS THE PAGE -->
+    <div class="employer-section">
+      <div class="section-title">What I Bring to the Table</div>
+      <div class="value-grid">${valueCardsHTML}</div>
+    </div>
+
+    <!-- COMPETENCIES + ROI -->
+    <div class="dash-grid">
+      <div class="dash-left">
+
+        <!-- Score cards -->
+        <div class="score-row" style="animation-delay:0.05s">
+          ${scoreCards}
+        </div>
+
+        <!-- Competency panel -->
+        <div class="panel" style="animation-delay:0.1s">
+          <div class="panel-title">Demonstrated Competencies</div>
+          <div class="comp-grid">
+            <div class="radar-wrap">${buildRadar(axes)}</div>
+            <div class="comp-list">${compListHTML}</div>
+          </div>
+        </div>
+
+        <!-- Bloom's -->
+        <div class="panel" style="animation-delay:0.15s">
+          <div class="panel-title">Cognitive Depth — Bloom's Taxonomy</div>
+          <div class="blooms-grid">${bloomsHTML}</div>
+        </div>
+
+      </div>
+
+      <!-- ROI SIDE PANEL -->
+      <div class="panel roi-panel" style="animation-delay:0.1s">
+        <div class="panel-title">Value Metrics</div>
+        ${roiHTML}
+      </div>
+    </div>
+
+    <!-- NARRATIVE + PORTFOLIO -->
+    <div class="bottom-grid">
+      <div class="panel" style="animation-delay:0.1s">
+        <div class="panel-title">Problem-Solving Journey</div>
+        <div class="narrative-list">${tlHTML}</div>
+      </div>
+      <div class="panel" style="animation-delay:0.15s">
+        <div class="panel-title">Portfolio Documentation</div>
+        ${portfolioHTML}
+      </div>
+    </div>
+  `;
+
+  // Trigger bar animations
+  setTimeout(() => {
+    document.querySelectorAll('.comp-bar-fill').forEach(el => {
+      const w = el.style.width;
+      el.style.width = '0';
+      requestAnimationFrame(() => requestAnimationFrame(() => { el.style.width = w; }));
+    });
+  }, 50);
+
+  document.getElementById('footerGenerated').textContent =
+    data.meta?.generated_by ? 'GENERATED BY ' + data.meta.generated_by.toUpperCase() : '';
+}
+
+// ── RADAR SVG ─────────────────────────────────────────────
+function buildRadar(axes) {
+  if (!axes || axes.length < 3) return '';
+  const n = axes.length, R = 100, cx = 0, cy = 0;
+  const angle = i => (Math.PI * 2 * i / n) - Math.PI / 2;
+  const pt = (i, r) => [cx + r * Math.cos(angle(i)), cy + r * Math.sin(angle(i))];
+
+  const rings = [0.25, 0.5, 0.75, 1.0].map(f => {
+    const pts = Array.from({ length: n }, (_, i) => pt(i, R * f).join(',')).join(' ');
+    return `<polygon points="${pts}" fill="none" stroke="#1a2d46" stroke-width="1"/>`;
+  }).join('');
+
+  const lines = Array.from({ length: n }, (_, i) => {
+    const [x, y] = pt(i, R);
+    return `<line x1="0" y1="0" x2="${x}" y2="${y}" stroke="#243347" stroke-width="1"/>`;
+  }).join('');
+
+  const dataPoints = axes.map((a, i) => pt(i, R * a.value / 100).join(',')).join(' ');
+  const dots = axes.map((a, i) => {
+    const [x, y] = pt(i, R * a.value / 100);
+    return `<circle cx="${x}" cy="${y}" r="3.5" fill="var(--accent)" opacity="0.9"/>`;
+  }).join('');
+
+  const labels = axes.map((a, i) => {
+    const [x, y] = pt(i, R * 1.22);
+    const anchor = x > 5 ? 'start' : x < -5 ? 'end' : 'middle';
+    return `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="'DM Mono',monospace" font-size="7" fill="#4e6a8a">${esc(a.label)}</text>`;
+  }).join('');
+
+  return `<svg width="240" height="240" viewBox="-130 -130 260 260" overflow="visible">
+    ${rings}${lines}
+    <polygon points="${dataPoints}" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.55)" stroke-width="1.5"/>
+    ${dots}${labels}
+  </svg>`;
+}
+
+// ── ENGAGEMENT BARS ───────────────────────────────────────
+function buildEngBars(score) {
+  return [0.45, 0.6, 0.72, 0.84, 0.92, 1.0].map((h, i) => {
+    const active = (i + 1) / 6 <= score / 100;
+    const bg = active ? (i >= 4 ? 'var(--accent)' : `rgba(0,229,255,${0.3 + i * 0.1})`) : '#1a2d46';
+    return `<div class="roi-bar-seg" style="height:${h * 100}%;background:${bg}"></div>`;
+  }).join('');
+}
+
+// ── ERROR / EMPTY STATES ──────────────────────────────────
+function showManifestError(msg) {
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('mainContent').innerHTML = `
+    <div class="empty-state">
+      <div class="empty-icon">⚠</div>
+      <div class="empty-title">Could Not Load Portfolio</div>
+      <div class="empty-desc">${esc(msg)}</div>
+      <div class="empty-code">
+        <div><span class="k">Error:</span> ${esc(msg)}</div>
+        <br>
+        <div><span class="p">→</span> Make sure <span class="s">sessions/manifest.json</span> exists</div>
+        <div><span class="p">→</span> If running locally, serve with: <span class="s">npx serve .</span></div>
+        <div><span class="p">→</span> For GitHub Pages, push files and wait ~60s</div>
+      </div>
+    </div>`;
+}
+
+function showEmptyState(msg) {
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('mainContent').innerHTML = `
+    <div class="empty-state">
+      <div class="empty-icon">◈</div>
+      <div class="empty-title">No Sessions Loaded</div>
+      <div class="empty-desc">${esc(msg || 'Add session JSON files to the sessions/ folder and update manifest.json')}</div>
+    </div>`;
+}
+
+// ── UTILS ─────────────────────────────────────────────────
+function avg(arr) { return arr.length ? Math.round(arr.reduce((a, b) => a + b, 0) / arr.length) : 0; }
+function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function truncate(s, n) { return s.length > n ? s.substring(0, n) + '…' : s; }
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
