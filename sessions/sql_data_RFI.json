@@ -1,0 +1,245 @@
+{
+"schema_version": "1.0",
+"session": {
+"id": "20260205-MOODLE-SQL-U7Q3",
+"date": "2026-02-05",
+"title": "Bulk Correct Moodle Competency Ratings via SQL (Student-Only Scope)",
+"source": "M365 Copilot",
+"source_type": "ai_conversation",
+"duration_minutes": 18,
+"topic_summary": "Defined and refined SQL to correct Moodle 4.5 competency ratings from 'Not yet competent' to 'Competent' for specified courses, ensuring alignment with Moodle’s competency and role/context schema. Added strict scoping to course contexts, preserved other ratings, and incorporated student-only and enrollment-safety constraints with verification and rollback guidance.",
+"tags": ["Moodle", "SQL", "Competencies", "Data Governance", "Learning Analytics", "Change Control"]
+},
+"scores": {
+"competency_domains_count": 6,
+"cognitive_depth_score": 66,
+"strategic_thinking_pct": 62,
+"roi_awareness_pct": 56,
+"engagement_score": 62,
+"meta_cognition_score": 22
+},
+"competencies": [
+{
+"name": "SQL & Relational Data Engineering",
+"score": 78,
+"color": "green",
+"frameworks": ["SFIA: DBAD", "ATD: Technology Application"],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": ["JOIN logic", "Scale value mapping"]
+},
+{
+"name": "Learning Technologies Administration (Moodle Competencies)",
+"score": 72,
+"color": "cyan",
+"frameworks": ["ATD: Technology Application", "ATD: Performance Improvement"],
+"bloom_level": 3,
+"bloom_label": "Apply",
+"tags": ["Competency frameworks", "Course contexts"]
+},
+{
+"name": "Data Governance & Quality Control",
+"score": 70,
+"color": "orange",
+"frameworks": ["SFIA: DATM", "SFIA: RLMT"],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": ["Scale integrity", "Label→ID translation"]
+},
+{
+"name": "Risk & Change Management (DB Ops)",
+"score": 66,
+"color": "purple",
+"frameworks": ["SFIA: CHMG", "SFIA: RLMT"],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": ["Rollback plan", "Cache purge timing"]
+},
+{
+"name": "Stakeholder Requirements Elicitation",
+"score": 58,
+"color": "cyan",
+"frameworks": ["SFIA: BUAN", "ATD: Consulting & Business Partnering"],
+"bloom_level": 2,
+"bloom_label": "Understand",
+"tags": ["Student-only scope", "Non-impact constraints"]
+},
+{
+"name": "Compliance & Auditability",
+"score": 62,
+"color": "orange",
+"frameworks": ["SFIA: AUDT", "SFIA: RLMT"],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": ["Selective updates", "Verification queries"]
+}
+]
+,
+"radar": {
+"axes": [
+{
+"label": "Data Accuracy",
+"value": 80,
+"description": "Correctly targets only eligible ratings and preserves others."
+},
+{
+"label": "Safety/Controls",
+"value": 78,
+"description": "Includes verification, rollback, and cache considerations."
+},
+{
+"label": "Scalability",
+"value": 72,
+"description": "Join strategy scales across multiple courses and users."
+},
+{
+"label": "Reusability",
+"value": 74,
+"description": "Pattern usable for other competency scale corrections."
+},
+{
+"label": "Clarity",
+"value": 68,
+"description": "Clear constraints and explicit context-level filtering."
+},
+{
+"label": "Speed",
+"value": 76,
+"description": "Bulk update approach vs manual rating workflows."
+}
+]
+},
+"blooms_progression": [
+{
+"level": 1,
+"label": "Remember",
+"icon": "🧠",
+"title": "Recall Moodle Schema",
+"description": "Referenced Moodle context levels and core tables involved in competencies and roles.",
+"dots_active": 2,
+"dot_color": "cyan"
+},
+{
+"level": 2,
+"label": "Understand",
+"icon": "📖",
+"title": "Interpret Competency Storage",
+"description": "Explained why ratings must map via scale value IDs instead of literal strings.",
+"dots_active": 3,
+"dot_color": "green"
+},
+{
+"level": 3,
+"label": "Apply",
+"icon": "🛠️",
+"title": "Compose Targeted SELECT",
+"description": "Built a verification query scoping to affected courses and ‘Not yet competent’ labels.",
+"dots_active": 3,
+"dot_color": "orange"
+},
+{
+"level": 4,
+"label": "Analyze",
+"icon": "🧪",
+"title": "Disambiguate Context & Roles",
+"description": "Joined role assignments to course contexts to isolate students only.",
+"dots_active": 4,
+"dot_color": "purple"
+},
+{
+"level": 5,
+"label": "Evaluate",
+"icon": "🧭",
+"title": "Assess Risks & Safeguards",
+"description": "Added safeguards for scale integrity, non-impact of other ratings, and post-checks.",
+"dots_active": 4,
+"dot_color": "orange"
+},
+{
+"level": 6,
+"label": "Create",
+"icon": "🏗️",
+"title": "Deliver Final Update Script",
+"description": "Produced a production-ready UPDATE with student-only and optional active-enrollment constraints.",
+"dots_active": 3,
+"dot_color": "green"
+}
+],
+"roi": {
+"knowledge_value_usd": 800,
+"time_efficiency_multiplier": 3.3,
+"engagement_score": 62,
+"retention_probability_pct": 65,
+"application_readiness": "HIGH",
+"employer_value_index": 7.6,
+"lms_equivalent_hours": 1.0,
+"session_hours": 0.3
+},
+"timeline": [
+{
+"title": "Problem Definition",
+"description": "User outlined the need to bulk-correct competency ratings across three Moodle courses while protecting other rating states."
+},
+{
+"title": "Initial Solution & Safeguards",
+"description": "Provided verification SELECT and safe UPDATE mapping labels→scale value IDs within course contexts."
+},
+{
+"title": "Student-Only Constraint",
+"description": "Refined the query by joining role assignments and roles to restrict updates to users with Student role in those course contexts."
+},
+{
+"title": "Operational Guidance",
+"description": "Added post-update checks, optional active enrollment constraints, and rollback strategy."
+}
+],
+"employer_value": [
+{
+"icon": "⚙️",
+"title": "Operational Efficiency Uplift",
+"description": "Demonstrates the ability to automate high-risk data corrections safely, reducing manual grading overhead and error probability."
+},
+{
+"icon": "🛡️",
+"title": "Governance & Compliance",
+"description": "Applies rigorous scoping and rollback procedures, aligning with auditability and change-control expectations for learning systems."
+},
+{
+"icon": "📈",
+"title": "Learning Data Integrity",
+"description": "Safeguards competency records, improving accuracy of progress dashboards and downstream analytics for decision-making."
+}
+],
+"portfolio": {
+"title": "Moodle Competency Rating Remediation (SQL Playbook)",
+"subtitle": "SELF-DIRECTED · APPLIED · DOCUMENTED",
+"primary_tags": ["Moodle 4.5", "SQL", "Data Governance"],
+"secondary_title": "Controlled Bulk Update Pattern",
+"secondary_subtitle": "CHANGE CONTROL · ROLLBACK READY",
+"secondary_tags": ["Risk Management", "Learning Analytics"],
+"documentation_formats": [
+{
+"label": "SQL Script (VERIFY + UPDATE + ROLLBACK)",
+"color": "purple"
+},
+{
+"label": "Runbook/SOP (Pre/Post Checks)",
+"color": "green"
+},
+{
+"label": "ERD/Schema Reference Snapshot",
+"color": "cyan"
+},
+{
+"label": "Change Ticket & Audit Log",
+"color": "orange"
+}
+]
+},
+"meta": {
+"generated_by": "M365 Copilot (GPT-5 reasoning)",
+"generated_at": "2026-02-05T14:53:24Z",
+"confidence": "HIGH",
+"notes": "Session analysis infers competence from problem framing and refinement; precise organizational role naming or custom scales may vary by site. ROI/time values are conservative estimates based on typical admin and consulting efforts for Moodle data corrections."
+}
+}

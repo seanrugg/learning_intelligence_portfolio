@@ -1,0 +1,273 @@
+{
+"schema_version": "1.0",
+"session": {
+"id": "20260223-IR-LRN-9FQK",
+"date": "2026-02-23T15:18:04Z",
+"title": "Incident Response & Learning Intelligence: Moodle + Communities Account Compromise",
+"source": "M365 Copilot",
+"source_type": "ai_conversation",
+"duration_minutes": 95,
+"topic_summary": "The session investigated unauthorized access across a learning ecosystem (Moodle and a Communities app), reconstructed timelines from logs and artifacts, verified file hashes, and produced formal reports with visuals. Actions taken, impact assessment, and hardening recommendations were documented, along with creation of evidentiary files (CSV, PDF, charts) and a leadership-ready brief.",
+"tags": ["incident-response", "learning-analytics", "digital-forensics", "Moodle", "content-moderation", "security-operations"]
+},
+"scores": {
+"competency_domains_count": 8,
+"cognitive_depth_score": 82,
+"strategic_thinking_pct": 78,
+"roi_awareness_pct": 72,
+"engagement_score": 88,
+"meta_cognition_score": 65
+},
+"competencies": [
+{
+"name": "Learning Data Forensics & Audit",
+"score": 90,
+"color": "purple",
+"frameworks": ["ATD Talent Development Capability Model – Data & Analytics", "SFIA – IRMG/INAS/DTAN"],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": ["log-analysis", "timeline-reconstruction"]
+},
+{
+"name": "Risk & Impact Assessment",
+"score": 84,
+"color": "orange",
+"frameworks": ["SHRM – Risk Management", "NIST NICE – PR-AT/RS"],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": ["exposure-evaluation", "severity-triage"]
+},
+{
+"name": "Evidence Packaging & Reporting",
+"score": 88,
+"color": "green",
+"frameworks": ["ATD – Communication & Collaboration", "SFIA – RLMT/REPM"],
+"bloom_level": 6,
+"bloom_label": "Create",
+"tags": ["PDF-report", "leadership-brief"]
+},
+{
+"name": "Learning Ecosystem Architecture Literacy",
+"score": 76,
+"color": "cyan",
+"frameworks": ["ATD – Technology Application", "EDUCAUSE – Learning Systems"],
+"bloom_level": 3,
+"bloom_label": "Apply",
+"tags": ["Moodle", "communities-platform"]
+},
+{
+"name": "Security Operations within L&D",
+"score": 80,
+"color": "orange",
+"frameworks": ["NIST CSF – Detect/Respond", "SFIA – SCTY/ITMG"],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": ["containment", "monitoring"]
+},
+{
+"name": "Data Visualization for Stakeholders",
+"score": 82,
+"color": "green",
+"frameworks": ["ATD – Data & Analytics", "IBSTPI – Evaluation/Reporting"],
+"bloom_level": 6,
+"bloom_label": "Create",
+"tags": ["timeline-chart", "bar-chart"]
+},
+{
+"name": "Governance & Policy Recommendations",
+"score": 74,
+"color": "cyan",
+"frameworks": ["ATD – Performance Improvement", "SHRM – Compliance"],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": ["MFA", "content-filters"]
+},
+{
+"name": "Stakeholder Communication & Documentation",
+"score": 86,
+"color": "purple",
+"frameworks": ["ATD – Communication", "PMI – Communications Management"],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": ["executive-summary", "casefile-artifacts"]
+}
+],
+"radar": {
+"axes": [
+{
+"label": "Forensics",
+"value": 90,
+"description": "Ability to parse logs, correlate artifacts, and reconstruct timelines."
+},
+{
+"label": "Reporting",
+"value": 88,
+"description": "Quality and completeness of formal incident documentation."
+},
+{
+"label": "Risk Eval",
+"value": 84,
+"description": "Accuracy in assessing confidentiality, integrity, availability impact."
+},
+{
+"label": "Strategy",
+"value": 78,
+"description": "Forward-looking controls and ecosystem-wide recommendations."
+},
+{
+"label": "Visualization",
+"value": 82,
+"description": "Clarity of charts and timelines for stakeholder consumption."
+}
+]
+},
+"blooms_progression": [
+{
+"level": 1,
+"label": "Remember",
+"icon": "🧠",
+"title": "Gathered Facts & Artifacts",
+"description": "Collected raw logs, file paths, URLs, and timestamps; preserved exact strings and hashes from hexdump and CSV.",
+"dots_active": 5,
+"dot_color": "cyan"
+},
+{
+"level": 2,
+"label": "Understand",
+"icon": "📘",
+"title": "Explained Context & Systems",
+"description": "Clarified Moodle draft area behavior, Communities storage paths, and what fields were editable versus fed from external sources.",
+"dots_active": 4,
+"dot_color": "green"
+},
+{
+"level": 3,
+"label": "Apply",
+"icon": "🛠️",
+"title": "Applied Tools to Data",
+"description": "Parsed CSV, generated cleaned datasets, converted timezones, and produced structured session summaries.",
+"dots_active": 5,
+"dot_color": "green"
+},
+{
+"level": 4,
+"label": "Analyze",
+"icon": "🔎",
+"title": "Correlated Multi-App Events",
+"description": "Sessionized Moodle activity, matched hashes across systems, aligned filesystem times with Communities events, and identified patterns.",
+"dots_active": 5,
+"dot_color": "orange"
+},
+{
+"level": 5,
+"label": "Evaluate",
+"icon": "⚖️",
+"title": "Judged Impact & Severity",
+"description": "Assessed exposure scope, verified no PII beyond names on user list, and rated risk and containment effectiveness.",
+"dots_active": 4,
+"dot_color": "orange"
+},
+{
+"level": 6,
+"label": "Create",
+"icon": "🧾",
+"title": "Produced Case Artifacts",
+"description": "Created a formal incident report (PDF/MD), visual timeline and charts, and packaged evidence for leadership and case files.",
+"dots_active": 5,
+"dot_color": "purple"
+}
+],
+"roi": {
+"knowledge_value_usd": 1600,
+"time_efficiency_multiplier": 2.3,
+"engagement_score": 88,
+"retention_probability_pct": 76,
+"application_readiness": "HIGH",
+"employer_value_index": 8.5,
+"lms_equivalent_hours": 3.7,
+"session_hours": 1.6
+},
+"timeline": [
+{
+"title": "Initial Log Intake",
+"description": "Parsed Moodle access logs, identified sessions, and calculated durations and events."
+},
+{
+"title": "Screenshot Evidence Review",
+"description": "Objectively transcribed and analyzed profile and community posts; isolated malicious strings and messaging."
+},
+{
+"title": "CSV Content Correlation",
+"description": "Normalized Communities CSV, produced cleaned timeline, and linked posts to handles and timestamps."
+},
+{
+"title": "Hexdump & Hash Verification",
+"description": "Reconstructed demo.txt from hexdump, computed hashes, and matched to Moodle log content hash."
+},
+{
+"title": "Filesystem Path Mapping",
+"description": "Mapped Verint/Telligent storage paths to events and reconciled 'date modified' times."
+},
+{
+"title": "Cross-App Timeline Synthesis",
+"description": "Aligned earliest Communities event to latest Moodle logout and computed total ecosystem span."
+},
+{
+"title": "Formal Report & Visuals",
+"description": "Generated leadership-ready PDF and MD report; created timeline and bar chart and embedded into an addendum PDF."
+},
+{
+"title": "Containment & Cleanup",
+"description": "Documented deactivation, suspension, post removals, profile cleanup, and exposure review."
+}
+],
+"employer_value": [
+{
+"icon": "🛡️",
+"title": "Rapid, Evidence-Backed Incident Response",
+"description": "Demonstrated end-to-end triage, artifact correlation, and defensible reporting that shortens downtime and reduces risk exposure."
+},
+{
+"icon": "📊",
+"title": "Decision-Ready Analytics & Visuals",
+"description": "Delivered clear timelines and charts that enable executives to make timely, informed containment and policy decisions."
+},
+{
+"icon": "⚙️",
+"title": "Operational Hardening Recommendations",
+"description": "Produced actionable controls (MFA, content filters, conditional access) aligned to real platform behaviors to prevent recurrence."
+}
+],
+"portfolio": {
+"title": "Learning Ecosystem Incident Response Dossier",
+"subtitle": "SELF-DIRECTED · APPLIED · DOCUMENTED",
+"primary_tags": ["incident-response", "learning-analytics", "digital-forensics"],
+"secondary_title": "Security Analytics & Reporting",
+"secondary_subtitle": "EVIDENCE-BASED · EXECUTIVE-READY",
+"secondary_tags": ["data-visualization", "risk-assessment"],
+"documentation_formats": [
+{
+"label": "Formal Incident Report (PDF)",
+"color": "purple"
+},
+{
+"label": "Report (Markdown)",
+"color": "green"
+},
+{
+"label": "Cleaned CSV Timelines",
+"color": "cyan"
+},
+{
+"label": "Visual Timeline & Charts (PNG/PDF)",
+"color": "orange"
+}
+]
+},
+"meta": {
+"generated_by": "M365 Copilot",
+"generated_at": "2026-02-23T15:18:04Z",
+"confidence": "HIGH",
+"notes": "Scoring reflects demonstrated capabilities within this session: multi-source correlation, incident documentation, and stakeholder-ready deliverables. Duration estimated from message complexity and artifact generation steps."
+}
+}

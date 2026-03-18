@@ -1,0 +1,261 @@
+{
+"schema_version": "1.0",
+"session": {
+"id": "20260130-AI-Detection-4FQX",
+"date": "2026-01-30T17:18:52Z",
+"title": "Designing a Test Plan to Detect Unauthorized AI Assistance in an eLearning Ecosystem",
+"source": "M365 Copilot",
+"source_type": "ai_conversation",
+"duration_minutes": 18,
+"topic_summary": "The session scoped and structured a comprehensive detection strategy for unauthorized AI-assisted task completion across exams, assignments, proctored quizzes, forums, and browsing. It translated risk outcomes into measurable detection hypotheses, telemetry requirements, test scenarios, SIEM analytics, and control validations tailored to username/password, CAC/PIV, and mobile web token authentication.",
+"tags": ["AI-detection", "assessment-integrity", "security-analytics", "LMS", "proctoring", "telemetry", "SIEM"]
+},
+"scores": {
+"competency_domains_count": 8,
+"cognitive_depth_score": 72,
+"strategic_thinking_pct": 78,
+"roi_awareness_pct": 70,
+"engagement_score": 65,
+"meta_cognition_score": 40
+},
+"competencies": [
+{
+"name": "Learning Data & Analytics Architecture",
+"score": 78,
+"color": "purple",
+"frameworks": ["ATD Talent Development Capability Model: Data & Analytics", "SFIA: DATA (Data management), METL"],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": ["telemetry", "SIEM"]
+},
+{
+"name": "Assessment Integrity & Proctoring Strategy",
+"score": 75,
+"color": "orange",
+"frameworks": ["ATD: Evaluating Learning Impact", "SHRM: Risk Management"],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": ["proctoring", "lockdown"]
+},
+{
+"name": "Security Engineering for eLearning",
+"score": 73,
+"color": "green",
+"frameworks": ["NIST CSF ID/DE/PR", "SFIA: SCTY, PENT, PENT (lite detection design)"],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": ["controls", "threat-model"]
+},
+{
+"name": "Test Planning & Experiment Design",
+"score": 80,
+"color": "purple",
+"frameworks": ["ISTQB Foundation (test design)", "ATD: Learning Technologies"],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": ["hypotheses", "pass-fail"]
+},
+{
+"name": "Risk Mapping & Policy Alignment",
+"score": 70,
+"color": "green",
+"frameworks": ["SHRM: Compliance & Risk Management", "NIST Privacy Framework"],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": ["policy", "privacy"]
+},
+{
+"name": "Operational Analytics & Playbooks",
+"score": 68,
+"color": "cyan",
+"frameworks": ["SFIA: MOAD, ASMG", "ATD: Performance Improvement"],
+"bloom_level": 3,
+"bloom_label": "Apply",
+"tags": ["queries", "triage"]
+},
+{
+"name": "Human Factors & Accessibility Considerations",
+"score": 62,
+"color": "orange",
+"frameworks": ["WCAG awareness", "ATD: Inclusive Learning"],
+"bloom_level": 3,
+"bloom_label": "Apply",
+"tags": ["accommodations", "false-positives"]
+},
+{
+"name": "Identity & Session Assurance",
+"score": 66,
+"color": "green",
+"frameworks": ["NIST 800-63", "SFIA: AUTM, IDAM"],
+"bloom_level": 3,
+"bloom_label": "Apply",
+"tags": ["CAC/PIV", "token-binding"]
+}
+],
+"radar": {
+"axes": [
+{
+"label": "Telemetry Design",
+"value": 80,
+"description": "Definition of client/server signals and feasibility for capture."
+},
+{
+"label": "Risk Mapping",
+"value": 74,
+"description": "Clarity connecting behaviors to academic, privacy, and system risks."
+},
+{
+"label": "Test Rigor",
+"value": 78,
+"description": "Breadth and specificity of scenarios, controls, and pass/fail criteria."
+},
+{
+"label": "Operationalization",
+"value": 65,
+"description": "Queries, alerts, and playbooks to run detections at scale."
+},
+{
+"label": "Policy & Ethics",
+"value": 62,
+"description": "Privacy, consent, accessibility, and appeals pathways."
+}
+]
+},
+"blooms_progression": [
+{
+"level": 1,
+"label": "Remember",
+"icon": "🧠",
+"title": "Identify Risk Areas",
+"description": "The learner enumerated unacceptable outcomes (academic integrity, PII leakage, vulnerabilities, credential risks).",
+"dots_active": 3,
+"dot_color": "cyan"
+},
+{
+"level": 2,
+"label": "Understand",
+"icon": "📘",
+"title": "Frame the Detection Problem",
+"description": "They clarified scope to encompass exams, assignments, proctoring, forums, and browsing, showing comprehension of contexts of use.",
+"dots_active": 4,
+"dot_color": "green"
+},
+{
+"level": 3,
+"label": "Apply",
+"icon": "🛠️",
+"title": "Apply Controls to Context",
+"description": "The plan linked concrete telemetry to activities (paste size, dwell time, DNS to AI domains, headless indicators) for practical tests.",
+"dots_active": 4,
+"dot_color": "orange"
+},
+{
+"level": 4,
+"label": "Analyze",
+"icon": "🔍",
+"title": "Hypotheses & Signal Correlation",
+"description": "Detection hypotheses mapped signals to outcomes and auth methods, including behavioral baselines and correlation logic.",
+"dots_active": 5,
+"dot_color": "purple"
+},
+{
+"level": 5,
+"label": "Evaluate",
+"icon": "⚖️",
+"title": "Define Pass/Fail & Thresholds",
+"description": "Explicit pass/fail criteria, target precision, and false-positive handling demonstrate evaluative judgment.",
+"dots_active": 3,
+"dot_color": "purple"
+},
+{
+"level": 6,
+"label": "Create",
+"icon": "🧩",
+"title": "Design End-to-End Runbook",
+"description": "A bespoke test matrix, analytics examples, and an execution roadmap were created to implement the strategy.",
+"dots_active": 2,
+"dot_color": "orange"
+}
+],
+"roi": {
+"knowledge_value_usd": 750,
+"time_efficiency_multiplier": 2.5,
+"engagement_score": 65,
+"retention_probability_pct": 62,
+"application_readiness": "HIGH",
+"employer_value_index": 7.8,
+"lms_equivalent_hours": 1.0,
+"session_hours": 0.3
+},
+"timeline": [
+{
+"title": "Problem Framing",
+"description": "Learner states need to detect AI assistance post-authentication across multiple auth methods."
+},
+{
+"title": "Risk Declaration",
+"description": "Learner lists unacceptable outcomes: academic integrity loss, PII leakage, system and credential risks."
+},
+{
+"title": "Scope Confirmation",
+"description": "Activities in scope established: exams, graded assignments, proctored quizzes, forums, browsing."
+},
+{
+"title": "Test Plan Drafted",
+"description": "Comprehensive plan produced with detection objectives, signals, scenarios, and pass/fail criteria."
+},
+{
+"title": "Operationalization Guidance",
+"description": "SIEM analytics examples, prevention control tests, and a 6–8 week execution roadmap provided."
+}
+],
+"employer_value": [
+{
+"icon": "🛡️",
+"title": "Protects Assessment Integrity",
+"description": "Demonstrated capability to design telemetry-driven detections that flag unauthorized AI use with defined thresholds and workflows."
+},
+{
+"icon": "📊",
+"title": "Builds Actionable Analytics",
+"description": "Translates risks into SIEM-ready signals, queries, and dashboards to support rapid incident triage and continuous tuning."
+},
+{
+"icon": "⚙️",
+"title": "Operational Readiness",
+"description": "Delivered a pragmatic runbook with test matrices, control validations, and milestone planning for cross-functional execution."
+}
+],
+"portfolio": {
+"title": "AI-Assisted Misuse Detection Test Plan for LMS",
+"subtitle": "SELF-DIRECTED · APPLIED · DOCUMENTED",
+"primary_tags": ["Detection Engineering", "Assessment Integrity", "Learning Analytics"],
+"secondary_title": "Security & Privacy Alignment",
+"secondary_subtitle": "RISK-MAPPED · ETHICS-AWARE",
+"secondary_tags": ["NIST CSF", "Accessibility"],
+"documentation_formats": [
+{
+"label": "Test Matrix & Runbook (PDF)",
+"color": "purple"
+},
+{
+"label": "SIEM Query Pack (SPL/KQL)",
+"color": "green"
+},
+{
+"label": "Detection Coverage Map (Diagram)",
+"color": "orange"
+},
+{
+"label": "Policy Addendum (Markdown)",
+"color": "cyan"
+}
+]
+},
+"meta": {
+"generated_by": "M365 Copilot",
+"generated_at": "2026-01-30T17:18:52Z",
+"confidence": "MEDIUM",
+"notes": "Scores reflect a concise yet substantive design session emphasizing analysis and evaluation over extended application. Engagement and meta-cognition are moderate due to limited back-and-forth and minimal reflective statements. ROI estimates benchmark against comparable security & assessment integrity workshops."
+}
+}

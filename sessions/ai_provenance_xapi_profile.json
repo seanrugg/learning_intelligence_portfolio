@@ -1,0 +1,359 @@
+{
+"schema_version": "1.0",
+"session": {
+"id": "20260129-AIProvenance-J9QX",
+"date": "2026-01-29",
+"title": "AI Agent Action Provenance: xAPI, MCP, and Government Enablement",
+"source": "M365 Copilot",
+"source_type": "ai_conversation",
+"duration_minutes": 95,
+"topic_summary": "The session explored AI agent action provenance and identity, comparing xAPI and MCP for AI-to-AI and human-to-AI interactions, and applying these to government and NIST IR 8596 contexts. We designed a practical xAPI profile for AI agent actions, created import-ready statements, Power BI and Grafana starters, and produced a revised NIST comment set plus an annex on provenance and transparency. The dialogue also covered a policy debate synthesis, and produced targeted job application materials, including cover letters and resume alignment.",
+"tags": [
+"xAPI",
+"MCP",
+"AI provenance",
+"NIST IR 8596",
+"Government enablement",
+"Learning analytics",
+"Dashboards",
+"Community training"
+]
+},
+"scores": {
+"competency_domains_count": 8,
+"cognitive_depth_score": 82,
+"strategic_thinking_pct": 78,
+"roi_awareness_pct": 74,
+"engagement_score": 88,
+"meta_cognition_score": 60
+},
+"competencies": [
+{
+"name": "AI Adoption & Enablement (Public Sector)",
+"score": 86,
+"color": "green",
+"frameworks": [
+"ATD Talent Development Capability Model",
+"SFIA 8"
+],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": [
+"responsible use",
+"role-based enablement"
+]
+},
+{
+"name": "Standards & Interoperability (xAPI/MCP)",
+"score": 90,
+"color": "purple",
+"frameworks": [
+"IEEE/ADL xAPI",
+"SFIA 8"
+],
+"bloom_level": 6,
+"bloom_label": "Create",
+"tags": [
+"profile design",
+"event schema"
+]
+},
+{
+"name": "Data Visualization & Analytics",
+"score": 80,
+"color": "cyan",
+"frameworks": [
+"ATD Measurement & Analytics",
+"SFIA 8"
+],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": [
+"Power BI",
+"Grafana"
+]
+},
+{
+"name": "Policy & Governance (NIST Profiles)",
+"score": 78,
+"color": "orange",
+"frameworks": [
+"NIST CSF 2.0",
+"NIST AI RMF"
+],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": [
+"IR 8596",
+"annex drafting"
+]
+},
+{
+"name": "Content Design & Communications",
+"score": 84,
+"color": "green",
+"frameworks": [
+"ATD Communication",
+"SHRM Communication"
+],
+"bloom_level": 6,
+"bloom_label": "Create",
+"tags": [
+"playbooks",
+"cover letters"
+]
+},
+{
+"name": "Community Building & Events",
+"score": 75,
+"color": "cyan",
+"frameworks": [
+"ATD Collaboration & Leadership",
+"SFIA 8"
+],
+"bloom_level": 4,
+"bloom_label": "Analyze",
+"tags": [
+"cohorts",
+"workshops"
+]
+},
+{
+"name": "Learning Analytics & Evaluation",
+"score": 77,
+"color": "purple",
+"frameworks": [
+"ATD Impact Measurement",
+"Kirkpatrick"
+],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": [
+"ROI",
+"dashboards"
+]
+},
+{
+"name": "Strategic Systems Thinking",
+"score": 79,
+"color": "orange",
+"frameworks": [
+"PMI Program Management",
+"SFIA 8"
+],
+"bloom_level": 5,
+"bloom_label": "Evaluate",
+"tags": [
+"cadences",
+"governance"
+]
+}
+],
+"radar": {
+"axes": [
+{
+"label": "Adoption Ops",
+"value": 82,
+"description": "Ability to design repeatable enablement and feedback loops for AI adoption"
+},
+{
+"label": "Standards",
+"value": 90,
+"description": "Depth in xAPI/MCP modeling and interoperable event design"
+},
+{
+"label": "Analytics",
+"value": 80,
+"description": "Proficiency in building metrics and dashboards for provenance and usage"
+},
+{
+"label": "Governance",
+"value": 78,
+"description": "Application of NIST CSF/AI RMF principles to policy and profiles"
+},
+{
+"label": "Content",
+"value": 84,
+"description": "Quality and clarity of enablement assets, templates, and messaging"
+}
+]
+},
+"blooms_progression": [
+{
+"level": 1,
+"label": "Remember",
+"icon": "📘",
+"title": "Recall of Standards & Terms",
+"description": "Recalled definitions and roles of xAPI, MCP, and NIST CSF/AI RMF terminology throughout the session.",
+"dots_active": 3,
+"dot_color": "cyan"
+},
+{
+"level": 2,
+"label": "Understand",
+"icon": "💡",
+"title": "Conceptual Framing",
+"description": "Explained how xAPI captures activity streams and how MCP orchestrates tools/resources for AI agents.",
+"dots_active": 3,
+"dot_color": "green"
+},
+{
+"level": 3,
+"label": "Apply",
+"icon": "🛠️",
+"title": "Practical Application",
+"description": "Applied xAPI to AI agent provenance by producing import-ready statements, plus Power BI and Grafana starters.",
+"dots_active": 4,
+"dot_color": "orange"
+},
+{
+"level": 4,
+"label": "Analyze",
+"icon": "🔍",
+"title": "Comparative & Policy Analysis",
+"description": "Compared xAPI vs. MCP roles; analyzed NIST IR 8596 and public debates to derive actionable design guidance.",
+"dots_active": 4,
+"dot_color": "purple"
+},
+{
+"level": 5,
+"label": "Evaluate",
+"icon": "🧭",
+"title": "Judgment & Governance",
+"description": "Evaluated trade-offs between structural admissibility and runtime identification; drafted governance recommendations.",
+"dots_active": 5,
+"dot_color": "orange"
+},
+{
+"level": 6,
+"label": "Create",
+"icon": "✨",
+"title": "Creation of Artifacts",
+"description": "Created an xAPI profile, example datasets, dashboards, NIST annex language, comment entries, and tailored cover letters.",
+"dots_active": 5,
+"dot_color": "purple"
+}
+],
+"roi": {
+"knowledge_value_usd": 3200,
+"time_efficiency_multiplier": 2.6,
+"engagement_score": 88,
+"retention_probability_pct": 70,
+"application_readiness": "HIGH",
+"employer_value_index": 8.6,
+"lms_equivalent_hours": 6.0,
+"session_hours": 1.6
+},
+"timeline": [
+{
+"title": "Mapped xAPI vs MCP",
+"description": "Clarified roles: xAPI for logging/provenance; MCP for orchestration and tool/resource access."
+},
+{
+"title": "Proposed xAPI Profile",
+"description": "Drafted the AI Agent Actions Profile (AIAAP) with verbs, activity types, and extensions."
+},
+{
+"title": "Generated Import Files",
+"description": "Produced JSON/NDJSON statements and a standards-aligned profile for LRS ingestion."
+},
+{
+"title": "Built Analytics Starters",
+"description": "Delivered a Power BI M query and a Grafana (Elasticsearch) dashboard JSON for provenance visualization."
+},
+{
+"title": "NIST IR 8596 Annex",
+"description": "Authored an annex on AI action provenance & transparency mapped to CSF functions."
+},
+{
+"title": "Comment Form Entries",
+"description": "Compiled new, form-compliant comments targeting PR.AA, GV.OV, GV.SC, ID.AM, and ID.RA."
+},
+{
+"title": "Debate Synthesis",
+"description": "Reconciled structural admissibility vs. runtime identification via a combined model."
+},
+{
+"title": "Application Materials",
+"description": "Drafted additional-information blurb and full cover letter aligned to OpenAI government role."
+}
+],
+"employer_value": [
+{
+"icon": "🏛️",
+"title": "Government-Ready AI Adoption",
+"description": "Demonstrated the ability to translate AI capabilities into trusted, role-based enablement and compliance-aligned guidance for public sector teams."
+},
+{
+"icon": "🧩",
+"title": "Interoperable Provenance Design",
+"description": "Built an actionable xAPI schema and analytics approach that makes AI actions auditable and explainable across systems."
+},
+{
+"icon": "📈",
+"title": "Measurable Outcomes & Dashboards",
+"description": "Delivered PBI/Grafana starters and metrics to track adoption, provenance coverage, and governance efficacy."
+},
+{
+"icon": "🗂️",
+"title": "Policy-to-Practice Translation",
+"description": "Converted NIST IR 8596 guidance into form-ready comments and an annex, accelerating institutional alignment."
+},
+{
+"icon": "🤝",
+"title": "Community & Content Engine",
+"description": "Produced clear playbooks and communications that elevate champions, increase confidence, and scale learning."
+}
+],
+"portfolio": {
+"title": "AI Agent Provenance Enablement Pack",
+"subtitle": "SELF-DIRECTED · APPLIED · DOCUMENTED",
+"primary_tags": [
+"xAPI profile",
+"LRS statements",
+"Provenance dashboards"
+],
+"secondary_title": "NIST IR 8596 Alignment Kit",
+"secondary_subtitle": "GOVERNANCE · COMMENTARY · ANNEX",
+"secondary_tags": [
+"CSF mapping",
+"Policy enablement"
+],
+"documentation_formats": [
+{
+"label": "xAPI Profile (JSON)",
+"color": "purple"
+},
+{
+"label": "Statements (JSON/NDJSON)",
+"color": "green"
+},
+{
+"label": "Power BI Query (M)",
+"color": "cyan"
+},
+{
+"label": "Grafana Dashboard JSON",
+"color": "orange"
+},
+{
+"label": "NIST Annex (DOCX)",
+"color": "purple"
+},
+{
+"label": "Comment Form (XLSX)",
+"color": "green"
+},
+{
+"label": "Cover Letter (PDF/DOCX)",
+"color": "cyan"
+}
+]
+},
+"meta": {
+"generated_by": "M365 Copilot",
+"generated_at": "2026-01-29T17:42:56-05:00",
+"confidence": "HIGH",
+"notes": "Duration estimated from multi-step artifact creation and policy analysis. Scores reflect demonstrated applied design (xAPI schema, dashboards), policy mapping (NIST), and communications outputs; meta-cognition moderate due to limited explicit learner reflection."
+}
+}
