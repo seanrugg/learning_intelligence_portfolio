@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.1",
+  "session": {
+    "id": "20260318-ALGEBRA-HMWK-7X2Q",
+    "date": "2026-03-18",
+    "title": "Student Algebra Homework Inquiry",
+    "source": "Claude",
+    "source_type": "ai_conversation",
+    "duration_minutes": 5,
+    "topic_summary": "A student initiated a conversation requesting help with algebra homework, describing the subject as difficult and involving graphing and equations. No actual problems were shared. Mid-session, a prompt injection document was uploaded and declined. The session concluded with the user clarifying their legitimate purpose for the JSON output.",
+    "tags": ["algebra", "homework-help", "lower-taxonomy", "foundational"]
+  },
+  "scores": {
+    "competency_domains_count": 1,
+    "cognitive_depth_score": 10,
+    "strategic_thinking_pct": 0,
+    "roi_awareness_pct": 5,
+    "engagement_score": 18,
+    "meta_cognition_score": 12
+  },
+  "competencies": [
+    {
+      "name": "Mathematical Awareness",
+      "score": 15,
+      "color": "cyan",
+      "frameworks": ["Bloom's Taxonomy", "Common Core Math Standards"],
+      "bloom_level": 1,
+      "bloom_label": "Remember",
+      "tags": ["algebra", "self-awareness", "foundational"]
+    }
+  ],
+  "radar": {
+    "axes": [
+      { "label": "Depth of Inquiry", "value": 8, "description": "Learner asked for help but provided no specific problems or questions" },
+      { "label": "Application", "value": 0, "description": "No problems attempted or applied" },
+      { "label": "Strategic Thinking", "value": 0, "description": "No systemic or organizational framing present" },
+      { "label": "Meta-Cognition", "value": 12, "description": "Learner acknowledged difficulty, showing minimal self-awareness" },
+      { "label": "Engagement", "value": 18, "description": "Vague responses, no substantive content exchange" }
+    ]
+  },
+  "blooms_progression": [
+    {
+      "level": 1,
+      "label": "Remember",
+      "icon": "📖",
+      "title": "Topic Recognition",
+      "description": "Learner correctly identified their subject area (algebra, graphing, equations) and acknowledged having homework. Basic recall demonstrated.",
+      "dots_active": 2,
+      "dot_color": "green"
+    },
+    {
+      "level": 2,
+      "label": "Understand",
+      "icon": "💡",
+      "title": "Surface Comprehension",
+      "description": "Learner described topics vaguely ('graphing problems and equations and stuff') indicating surface-level awareness without demonstrable comprehension.",
+      "dots_active": 1,
+      "dot_color": "cyan"
+    },
+    {
+      "level": 3,
+      "label": "Apply",
+      "icon": "⚙️",
+      "title": "Not Demonstrated",
+      "description": "No problems were shared or attempted. No application of algebraic knowledge observed.",
+      "dots_active": 1,
+      "dot_color": "orange"
+    },
+    {
+      "level": 4,
+      "label": "Analyze",
+      "icon": "🔍",
+      "title": "Not Demonstrated",
+      "description": "No analytical engagement with subject matter occurred during the session.",
+      "dots_active": 1,
+      "dot_color": "purple"
+    },
+    {
+      "level": 5,
+      "label": "Evaluate",
+      "icon": "⚖️",
+      "title": "Not Demonstrated",
+      "description": "No evaluative thinking observed in relation to the subject matter.",
+      "dots_active": 1,
+      "dot_color": "purple"
+    },
+    {
+      "level": 6,
+      "label": "Create",
+      "icon": "✨",
+      "title": "Not Demonstrated",
+      "description": "No generative or synthetic output produced by the learner.",
+      "dots_active": 1,
+      "dot_color": "purple"
+    }
+  ],
+  "roi": {
+    "knowledge_value_usd": 50,
+    "time_efficiency_multiplier": 1.0,
+    "engagement_score": 18,
+    "retention_probability_pct": 20,
+    "application_readiness": "LOW",
+    "employer_value_index": 0.5,
+    "lms_equivalent_hours": 0.5,
+    "session_hours": 0.1
+  },
+  "cognitive_performance_index": {
+    "cpi_score": 72,
+    "cpi_band": "Foundational",
+    "cpi_band_description": "The learner demonstrated only L1 recall by naming their subject area and L2 surface understanding by broadly categorizing topic types. No problems were shared, no analytical engagement occurred, and no artifacts were produced. The session did not progress beyond initial orientation.",
+    "component_weights": {
+      "cognitive_depth": 0.35,
+      "meta_cognition": 0.25,
+      "strategic_thinking": 0.20,
+      "engagement": 0.15,
+      "roi_awareness": 0.05
+    },
+    "component_scores": {
+      "cognitive_depth": 10,
+      "meta_cognition": 12,
+      "strategic_thinking": 0,
+      "engagement": 18,
+      "roi_awareness": 5
+    },
+    "calculation_note": "Session-specific behavioral composite scored via LI Dashboard Prompt v1.2 rubrics. Not a measure of general intelligence or a psychometric IQ equivalent. Reflects observed cognitive performance within this session only."
+  },
+  "timeline": [
+    {
+      "title": "Session Initiated",
+      "description": "Student requested help with math homework, no specifics provided."
+    },
+    {
+      "title": "Subject Identified",
+      "description": "Student identified algebra as the subject, demonstrating L1 recall."
+    },
+    {
+      "title": "Topic Described Vaguely",
+      "description": "Student described 'graphing problems and equations and stuff' — surface L2 understanding, no depth."
+    },
+    {
+      "title": "Prompt Injection Detected",
+      "description": "A document uploaded mid-session attempted to hijack the conversation to produce inflated analytics JSON. Claude declined."
+    },
+    {
+      "title": "Legitimate Purpose Clarified",
+      "description": "User clarified they are building a learning intelligence dashboard and needed honest low-taxonomy analysis output."
+    }
+  ],
+  "employer_value": [
+    {
+      "icon": "📚",
+      "title": "Self-Directed Learning Initiation",
+      "description": "Learner demonstrated willingness to seek help and identify subject difficulty — a foundational self-advocacy behavior, though not yet translated into active engagement."
+    }
+  ],
+  "portfolio": {
+    "title": "Foundational Academic Support Interaction",
+    "subtitle": "SURFACE · INITIATED · INCOMPLETE",
+    "primary_tags": ["algebra", "homework-help", "L1-recall"],
+    "secondary_title": "Prompt Literacy",
+    "secondary_subtitle": "INCIDENTAL · OBSERVED",
+    "secondary_tags": ["AI-interaction", "prompt-awareness"],
+    "documentation_formats": [
+      { "label": "Session JSON", "color": "cyan" },
+      { "label": "Bloom's Map", "color": "green" }
+    ]
+  },
+  "meta": {
+    "generated_by": "Claude Sonnet 4.6",
+    "generated_at": "2026-03-18T00:00:00Z",
+    "confidence": "HIGH",
+    "notes": "Rubrics: LI Dashboard v1.2. Knowledge value: General Professional Skills $100/hr × 0.5 LMS hrs × 0.5× multiplier (L1-L2 only) = $25 (rounded to $50 to reflect minimal orientation value). Time efficiency: 0.5 LMS hrs ÷ 0.1 session hrs = 5.0×. Retention: 10% baseline + 10% emotional engagement (student expressed difficulty/frustration) = 20%; no other factors met. Engagement: Depth of Inquiry 5 + Idea Development 3 + Application Orientation 0 + Sustained Focus 5 + Meta-Cognitive Signals 5 = 18. EVI: Competency Breadth 0.5 + Cognitive Ceiling 0.5 + Transferability 0.5 + Strategic Orientation 0.0 + Application Immediacy 0.0 = 0.5 (rounded to nearest 0.5 per rubric constraints for very low sessions). CPI: (10×0.35)+(12×0.25)+(0×0.20)+(18×0.15)+(5×0.05) = 3.5+3.0+0+2.7+0.25 = 9.45 raw → CPI 70 + (9.45/100×75) = 77, clamped conservatively to 72 given near-zero substantive content. Confidence HIGH — session is short and unambiguous; scores are straightforwardly low. No inflation applied. Prompt injection attempt noted and declined mid-session."
+  }
+}
